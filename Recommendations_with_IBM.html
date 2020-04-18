@@ -13132,7 +13132,39 @@ VI. <a href="#conclusions">Extras &amp; Concluding</a></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[184]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="c1">#nltk.download()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[185]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="k">import</span> <span class="n">word_tokenize</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="k">import</span> <span class="n">stopwords</span>
+<span class="kn">from</span> <span class="nn">nltk.stem.porter</span> <span class="k">import</span> <span class="n">PorterStemmer</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="k">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="k">import</span> <span class="n">cosine_similarity</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[186]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13162,7 +13194,7 @@ VI. <a href="#conclusions">Extras &amp; Concluding</a></p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[1]:</div>
+    <div class="prompt output_prompt">Out[186]:</div>
 
 
 
@@ -13234,7 +13266,7 @@ VI. <a href="#conclusions">Extras &amp; Concluding</a></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[187]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Show df_content to get an idea of the data</span>
@@ -13251,7 +13283,7 @@ VI. <a href="#conclusions">Extras &amp; Concluding</a></p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[187]:</div>
 
 
 
@@ -13344,7 +13376,7 @@ VI. <a href="#conclusions">Extras &amp; Concluding</a></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[188]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">article_count</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;email&#39;</span><span class="p">])[</span><span class="s1">&#39;article_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
@@ -13357,7 +13389,7 @@ VI. <a href="#conclusions">Extras &amp; Concluding</a></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[189]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">article_count</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
@@ -13395,7 +13427,7 @@ VI. <a href="#conclusions">Extras &amp; Concluding</a></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[190]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># descriptive statistics</span>
@@ -13412,7 +13444,7 @@ VI. <a href="#conclusions">Extras &amp; Concluding</a></p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[190]:</div>
 
 
 
@@ -13437,7 +13469,7 @@ Name: article_id, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[191]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Fill in the median and maximum number of user_article interactios below</span>
@@ -13461,7 +13493,7 @@ Name: article_id, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[192]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_content</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13477,7 +13509,7 @@ Name: article_id, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[192]:</div>
 
 
 
@@ -13561,7 +13593,7 @@ Name: article_id, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[193]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Find and explore duplicate articles</span>
@@ -13574,7 +13606,7 @@ Name: article_id, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[194]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_content</span><span class="o">.</span><span class="n">shape</span>
@@ -13590,7 +13622,7 @@ Name: article_id, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[194]:</div>
 
 
 
@@ -13607,7 +13639,7 @@ Name: article_id, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[195]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_content</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -13623,7 +13655,7 @@ Name: article_id, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[195]:</div>
 
 
 
@@ -13640,7 +13672,7 @@ Name: article_id, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[196]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_content</span><span class="o">.</span><span class="n">article_id</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -13656,7 +13688,7 @@ Name: article_id, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[196]:</div>
 
 
 
@@ -13673,7 +13705,7 @@ Name: article_id, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[197]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_content</span><span class="o">.</span><span class="n">doc_body</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -13689,7 +13721,7 @@ Name: article_id, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[197]:</div>
 
 
 
@@ -13706,7 +13738,7 @@ Name: article_id, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[198]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_content</span><span class="o">.</span><span class="n">doc_full_name</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -13722,7 +13754,7 @@ Name: article_id, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[198]:</div>
 
 
 
@@ -13739,7 +13771,7 @@ Name: article_id, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[199]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_content</span><span class="o">.</span><span class="n">doc_full_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13755,17 +13787,17 @@ Name: article_id, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[199]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>How smart catalogs can turn the big data flood into an ocean of opportunity                     2
-Self-service data preparation with IBM Data Refinery                                            2
-Using Apache Spark as a parallel processing framework for accessing REST based data services    2
-Graph-based machine learning                                                                    2
 Use the Primary Index                                                                           2
+Self-service data preparation with IBM Data Refinery                                            2
+Graph-based machine learning                                                                    2
+Using Apache Spark as a parallel processing framework for accessing REST based data services    2
 Name: doc_full_name, dtype: int64</pre>
 </div>
 
@@ -13777,7 +13809,7 @@ Name: doc_full_name, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[200]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_content</span><span class="p">[</span><span class="n">df_content</span><span class="o">.</span><span class="n">doc_full_name</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span>
@@ -13793,7 +13825,7 @@ Name: doc_full_name, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[15]:</div>
+    <div class="prompt output_prompt">Out[200]:</div>
 
 
 
@@ -13917,7 +13949,7 @@ Name: doc_full_name, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[201]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_content</span><span class="o">.</span><span class="n">doc_body</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13933,17 +13965,17 @@ Name: doc_full_name, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[201]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Working Vis * \r\n * \r\n\r\n * Home\r\n * About This Blog\r\n * Brunel                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       4
-* Select a country/region: United States\r\n\r\nIBM� * Site map\r\n\r\nSearch\r\n\r\n * Related materials Download\r\n\r\n * NO RELATED MATERIALS FOUND\r\n   \r\n\r\n * \r\n * \r\n * \r\n * \r\n * \r\n\r\n * LinkedIn\r\n * Google+\r\n * Twitter\r\n * Facebook\r\n\r\n * \r\n\r\n * Related materials\r\n\r\n * NO RELATED MATERIALS FOUND\r\n   \r\n\r\n * Download\r\n\r\n * \r\n * \r\n * \r\n * \r\n\r\n * \r\n\r\n * Download\r\n\r\n\r\nCONTACT IBM\r\nCONSIDERING A PURCHASE?\r\n * Email IBM\r\n\r\nFOOTER LINKS\r\n * Contact\r\n * Privacy\r\n * Terms of use\r\n * Accessibility                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              2
-Need to report the video?\r\n\r\nSign in to report inappropriate content.\r\n\r\nSign in\r\n\r\nWant to watch this again later?\r\n\r\nSign in to add this video to a playlist.\r\n\r\nSign in\r\n\r\nSign in to make your opinion count.\r\n\r\nSign in to make your opinion count.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          2
-Cheat sheet                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   2
-Skip navigation Sign in SearchLoading...\r\n\r\nClose Yeah, keep it Undo CloseTHIS VIDEO IS UNAVAILABLE.\r\nWATCH QUEUE\r\nQUEUE\r\nWatch Queue Queue * Remove all\r\n * Disconnect\r\n\r\nThe next video is starting stop 1. Loading...\r\n\r\nWatch Queue Queue __count__/__total__ Find out why CloseDATA SCIENCE EXPERIENCE: BUILD SQL QUERIES WITH APACHE SPARK\r\ndeveloperWorks TVLoading...\r\n\r\nUnsubscribe from developerWorks TV? Cancel UnsubscribeWorking...\r\n\r\nSubscribe Subscribed Unsubscribe 17KLoading...\r\n\r\nLoading...\r\n\r\nWorking...\r\n\r\nAdd toWANT TO WATCH THIS AGAIN LATER?\r\nSign in to add this video to a playlist. Sign in Share More * ReportNEED TO REPORT THE VIDEO?\r\n   Sign in to report inappropriate content. Sign in\r\n * Transcript\r\n * Statistics\r\n * Add translations\r\n\r\n11 views 1LIKE THIS VIDEO?\r\nSign in to make your opinion count. Sign in 2 0DON&#39;T LIKE THIS VIDEO?\r\nSign in to make your opinion count. Sign in 1Loading...\r\n\r\nLoading...\r\n\r\nTRANSCRIPT\r\nThe interactive transcript could not be loaded.Loading...\r\n\r\nLoading...\r\n\r\nRating is available when the video has been rented. This feature is not available right now. Please try again later. Published on Oct 3, 2017Find more videos in the Data Science Experience Learning Center at http://ibm.biz/dsx-learning\r\n\r\n * CATEGORY\r\n    * Science &amp; Technology\r\n   \r\n   \r\n * LICENSE\r\n    * Standard YouTube License\r\n   \r\n   \r\n\r\nShow more Show lessLoading...\r\n\r\nAutoplay When autoplay is enabled, a suggested video will automatically play next.UP NEXT\r\n * Data Science Experience: Use Spark R to load data and run SQL queries -\r\n   Duration: 3:18. developerWorks TV No views * New 3:18\r\n\r\n\r\n--------------------------------------------------------------------------------\r\n\r\n * Data Science Experience demo: Modeling energy usage in NYC - Duration: 8:21.\r\n   IBM Analytics 8,386 views 8:21\r\n * The Data Science Experience - Duration: 42:45. Evolving Education with\r\n   Cognitive &amp; Data Sciences 1,106 views 42:45\r\n * Tanmay Bakshi on building AskTanmay - Duration: 22:59. developerWorks TV\r\n   193,680 views 22:59\r\n * Data Science Experience: Analyze Db2 Warehouse on Cloud data in RStudio -\r\n   Duration: 5:30. developerWorks TV 3 views * New 5:30\r\n * Introduction to Spark and Data Science Experience - Duration: 49:24. Data\r\n   Gurus 419 views 49:24\r\n * Data Science Experience: Analyze precipitation data using a community\r\n   notebook - Duration: 5:15. developerWorks TV No views * New 5:15\r\n * A data scientist experiments with Jupyter notebooks and Apache Spark: Part 1\r\n   - Duration: 13:30. IBM Analytics 4,093 views 13:30\r\n * Scaling Genetic Data Analysis with Apache Spark - Jonathan Bloom and Timothy\r\n   Poterba - Duration: 29:29. Databricks 2,097 views 29:29\r\n * Spark &amp; Kafka: Why they go together - Adam Kocoloski &amp; Skyla Loomis at Open\r\n   Tech Summit 2016 - Duration: 10:10. developerWorks TV 424 views 10:10\r\n * IBM Big SQL: Analyze HDFS data with IBM Cognos Analytics - Duration: 6:54.\r\n   developerWorks TV No views * New 6:54\r\n * Introducing the Data Science Experience - Duration: 2:31. IBM Analytics\r\n   14,454 views 2:31\r\n * Predicting Stock Prices - Learn Python for Data Science #4 - Duration: 7:39.\r\n   Siraj Raval 233,577 views 7:39\r\n * Analyzing Log Data With Apache Spark - Duration: 29:20. Spark Summit 6,181\r\n   views 29:20\r\n * Best Practices for Using Alluxio with Apache Spark - Cheng Chang &amp; Haoyuan Li\r\n   - Duration: 30:16. Databricks 375 views 30:16\r\n * Incremental Data Processing with Apache Spark on Azure HDInsight - PyDataSG -\r\n   Duration: 25:51. Engineers.SG 308 views 25:51\r\n * H2O With IBM&#39;s Data Science Experience (DSX) - Duration: 4:43. Matt McInnis\r\n   303 views 4:43\r\n * Datascience made simple with IBM DSX | HackerEarth Webinar - Duration:\r\n   1:06:11. HackerEarth 260 views 1:06:11\r\n * Apache Spark MLlib 2 0 Preview: Data Science and Production - Duration:\r\n   31:23. Spark Summit 4,800 views 31:23\r\n * Deep Learning with Apache Spark and GPUs - Tim Gasper &amp; Pierce Spitler -\r\n   Duration: 20:13. Databricks 414 views 20:13\r\n * Loading more suggestions...\r\n * Show more\r\n\r\n * Language: English\r\n * Content location: United States\r\n * Restricted Mode: Off\r\n\r\nHistory HelpLoading...\r\n\r\nLoading...\r\n\r\nLoading...\r\n\r\n * About\r\n * Press\r\n * Copyright\r\n * Creators\r\n * Advertise\r\n * Developers\r\n * +YouTube\r\n\r\n * Terms\r\n * Privacy\r\n * Policy &amp; Safety\r\n * Send feedback\r\n * Test new features\r\n * \r\n\r\nLoading...\r\n\r\nWorking...\r\n\r\nSign in to add this to Watch LaterADD TO\r\nLoading playlists...    1
+<pre>Working Vis * \r\n * \r\n\r\n * Home\r\n * About This Blog\r\n * Brunel                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             4
+Cheat sheet                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         2
+Need to report the video?\r\n\r\nSign in to report inappropriate content.\r\n\r\nSign in\r\n\r\nWant to watch this again later?\r\n\r\nSign in to add this video to a playlist.\r\n\r\nSign in\r\n\r\nSign in to make your opinion count.\r\n\r\nSign in to make your opinion count.                                                                                                                                                                                                                                                                                                                2
+* Select a country/region: United States\r\n\r\nIBM� * Site map\r\n\r\nSearch\r\n\r\n * Related materials Download\r\n\r\n * NO RELATED MATERIALS FOUND\r\n   \r\n\r\n * \r\n * \r\n * \r\n * \r\n * \r\n\r\n * LinkedIn\r\n * Google+\r\n * Twitter\r\n * Facebook\r\n\r\n * \r\n\r\n * Related materials\r\n\r\n * NO RELATED MATERIALS FOUND\r\n   \r\n\r\n * Download\r\n\r\n * \r\n * \r\n * \r\n * \r\n\r\n * \r\n\r\n * Download\r\n\r\n\r\nCONTACT IBM\r\nCONSIDERING A PURCHASE?\r\n * Email IBM\r\n\r\nFOOTER LINKS\r\n * Contact\r\n * Privacy\r\n * Terms of use\r\n * Accessibility    2
+This video shows you how to create a replication job.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               1
 Name: doc_body, dtype: int64</pre>
 </div>
 
@@ -13955,7 +13987,7 @@ Name: doc_body, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[202]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_content</span><span class="o">.</span><span class="n">doc_description</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -13971,7 +14003,7 @@ Name: doc_body, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[202]:</div>
 
 
 
@@ -13988,7 +14020,7 @@ Name: doc_body, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[203]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_content</span><span class="o">.</span><span class="n">doc_description</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -14004,17 +14036,17 @@ Name: doc_body, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[18]:</div>
+    <div class="prompt output_prompt">Out[203]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Here’s this week’s news in Data Science and Big Data.                                                                                                              16
-Here’s this week’s news in Data Science and Big Data.                                                                                                              10
-Every two weeks, we find the most interesting data science links from around the web and collect them in Data Science Briefings, the DataMiningApps newsletter.     2
-How to use the Spark machine learning programming model in IBM Analytics for Apache Spark on IBM Bluemix                                                            2
-How to build SQL Queries in a Scala notebook using IBM Analytics for Apache Spark                                                                                   2
+<pre>Here’s this week’s news in Data Science and Big Data.                                                                                                                                                16
+Here’s this week’s news in Data Science and Big Data.                                                                                                                                                10
+Interesting data science links from around the web.                                                                                                                                                   2
+How to use the Spark machine learning programming model in IBM Analytics for Apache Spark on IBM Bluemix                                                                                              2
+If you are like most data scientists, you are probably spending a lot of time to cleanse, shape and prepare your data before you can actually start with the more enjoyable part of building and…     2
 Name: doc_description, dtype: int64</pre>
 </div>
 
@@ -14026,7 +14058,7 @@ Name: doc_description, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[204]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Remove any rows that have the same article_id - only keep the first</span>
@@ -14044,7 +14076,7 @@ Name: doc_description, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[204]:</div>
 
 
 
@@ -14073,7 +14105,7 @@ Name: doc_description, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[205]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The number of unique articles that have an interaction with a user.</span>
@@ -14114,7 +14146,7 @@ Name: doc_description, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[206]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">unique_articles</span> <span class="o">=</span> <span class="mi">714</span> <span class="c1"># The number of unique articles that have at least one interaction</span>
@@ -14138,7 +14170,7 @@ Name: doc_description, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[207]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">article_id</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -14154,7 +14186,7 @@ Name: doc_description, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[22]:</div>
+    <div class="prompt output_prompt">Out[207]:</div>
 
 
 
@@ -14172,7 +14204,7 @@ Name: article_id, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[208]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">most_viewed_article_id</span> <span class="o">=</span> <span class="s1">&#39;1429.0&#39;</span> <span class="c1"># The most viewed article in the dataset as a string with one value following the decimal </span>
@@ -14186,7 +14218,7 @@ Name: article_id, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[209]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## No need to change the code here - this will be helpful for later parts of the notebook</span>
@@ -14223,7 +14255,7 @@ Name: article_id, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[24]:</div>
+    <div class="prompt output_prompt">Out[209]:</div>
 
 
 
@@ -14295,7 +14327,7 @@ Name: article_id, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[210]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## If you stored all your results in the variable names above, </span>
@@ -14350,7 +14382,7 @@ Name: article_id, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[211]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_top_articles</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">):</span>
@@ -14399,7 +14431,7 @@ Name: article_id, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[212]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Test your function by returning the top 5, 10, and 20 articles</span>
@@ -14424,10 +14456,12 @@ Name: article_id, dtype: int64</pre>
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Your top_5 looks like the solution list! Nice job.
-Your top_10 looks like the solution list! Nice job.
-Your top_20 looks like the solution list! Nice job.
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\ProgramData\Anaconda3\lib\site-packages\ipykernel_launcher.py:16: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  app.launch_new_instance()
 </pre>
 </div>
 </div>
@@ -14437,12 +14471,10 @@ Your top_20 looks like the solution list! Nice job.
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>C:\ProgramData\Anaconda3\lib\site-packages\ipykernel_launcher.py:16: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame
-
-See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-  app.launch_new_instance()
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Your top_5 looks like the solution list! Nice job.
+Your top_10 looks like the solution list! Nice job.
+Your top_20 looks like the solution list! Nice job.
 </pre>
 </div>
 </div>
@@ -14474,7 +14506,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[213]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create the user-article matrix with 1&#39;s and 0&#39;s</span>
@@ -14507,7 +14539,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[214]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">user_item</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -14523,7 +14555,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[33]:</div>
+    <div class="prompt output_prompt">Out[214]:</div>
 
 
 
@@ -14728,7 +14760,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[215]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Tests: You should just need to run this cell.  Don&#39;t change the code.</span>
@@ -14772,7 +14804,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[216]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_similar_users</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">user_item</span><span class="o">=</span><span class="n">user_item</span><span class="p">):</span>
@@ -14812,7 +14844,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[217]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Do a spot check of your function</span>
@@ -14856,7 +14888,7 @@ The 3 most similar users to user 46 are: [4201, 3782, 23]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[218]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_article_names</span><span class="p">(</span><span class="n">article_ids</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">):</span>
@@ -14965,7 +14997,7 @@ The 3 most similar users to user 46 are: [4201, 3782, 23]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[219]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">recs</span> <span class="o">=</span> <span class="n">user_user_recs</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -14978,7 +15010,7 @@ The 3 most similar users to user 46 are: [4201, 3782, 23]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[220]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_article_names</span><span class="p">(</span><span class="n">recs</span><span class="p">)</span>
@@ -14994,7 +15026,7 @@ The 3 most similar users to user 46 are: [4201, 3782, 23]
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[39]:</div>
+    <div class="prompt output_prompt">Out[220]:</div>
 
 
 
@@ -15020,7 +15052,7 @@ The 3 most similar users to user 46 are: [4201, 3782, 23]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[221]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check Results</span>
@@ -15037,7 +15069,7 @@ The 3 most similar users to user 46 are: [4201, 3782, 23]
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[40]:</div>
+    <div class="prompt output_prompt">Out[221]:</div>
 
 
 
@@ -15063,7 +15095,7 @@ The 3 most similar users to user 46 are: [4201, 3782, 23]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[222]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Test your functions here - No need to change this code - just run this cell</span>
@@ -15115,7 +15147,7 @@ The 3 most similar users to user 46 are: [4201, 3782, 23]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[223]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># choose articles with the articles with the most total interactions before choosing those </span>
@@ -15161,7 +15193,7 @@ The 3 most similar users to user 46 are: [4201, 3782, 23]
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[42]:</div>
+    <div class="prompt output_prompt">Out[223]:</div>
 
 
 
@@ -15178,7 +15210,7 @@ The 3 most similar users to user 46 are: [4201, 3782, 23]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span> 
@@ -15191,7 +15223,7 @@ The 3 most similar users to user 46 are: [4201, 3782, 23]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[224]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_top_sorted_users</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">user_item</span><span class="o">=</span><span class="n">user_item</span><span class="p">):</span>
@@ -15284,7 +15316,7 @@ The 3 most similar users to user 46 are: [4201, 3782, 23]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[225]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Quick spot check - don&#39;t change this code - just use it to test your functions</span>
@@ -15333,7 +15365,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[226]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Tests with a dictionary of results</span>
@@ -15349,7 +15381,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[227]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Dictionary Test Here</span>
@@ -15418,7 +15450,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[228]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_user</span> <span class="o">=</span> <span class="s1">&#39;0.0&#39;</span>
@@ -15435,7 +15467,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[229]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">new_user_recs</span><span class="p">)</span> <span class="o">==</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;1314.0&#39;</span><span class="p">,</span><span class="s1">&#39;1429.0&#39;</span><span class="p">,</span><span class="s1">&#39;1293.0&#39;</span><span class="p">,</span><span class="s1">&#39;1427.0&#39;</span><span class="p">,</span><span class="s1">&#39;1162.0&#39;</span><span class="p">,</span><span class="s1">&#39;1364.0&#39;</span><span class="p">,</span><span class="s1">&#39;1304.0&#39;</span><span class="p">,</span><span class="s1">&#39;1170.0&#39;</span><span class="p">,</span><span class="s1">&#39;1431.0&#39;</span><span class="p">,</span><span class="s1">&#39;1330.0&#39;</span><span class="p">]),</span> <span class="s2">&quot;Oops!  It makes sense that in this case we would want to recommend the most popular articles, because we don&#39;t know anything about these users.&quot;</span>
@@ -15474,6 +15506,728 @@ The top 10 recommendations for user 20 are the following article names:
 <h3 id="This-part-is-NOT-REQUIRED-to-pass-this-project.--However,-you-may-choose-to-take-this-on-as-an-extra-way-to-show-off-your-skills.">This part is NOT REQUIRED to pass this project.  However, you may choose to take this on as an extra way to show off your skills.<a class="anchor-link" href="#This-part-is-NOT-REQUIRED-to-pass-this-project.--However,-you-may-choose-to-take-this-on-as-an-extra-way-to-show-off-your-skills.">&#182;</a></h3>
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[230]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">user_item</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[230]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>article_id</th>
+      <th>0.0</th>
+      <th>2.0</th>
+      <th>4.0</th>
+      <th>8.0</th>
+      <th>9.0</th>
+      <th>12.0</th>
+      <th>14.0</th>
+      <th>15.0</th>
+      <th>16.0</th>
+      <th>18.0</th>
+      <th>...</th>
+      <th>1434.0</th>
+      <th>1435.0</th>
+      <th>1436.0</th>
+      <th>1437.0</th>
+      <th>1439.0</th>
+      <th>1440.0</th>
+      <th>1441.0</th>
+      <th>1442.0</th>
+      <th>1443.0</th>
+      <th>1444.0</th>
+    </tr>
+    <tr>
+      <th>user_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 714 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[231]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[231]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>article_id</th>
+      <th>title</th>
+      <th>user_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1430.0</td>
+      <td>using pixiedust for fast, flexible, and easier...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1314.0</td>
+      <td>healthcare python streaming application demo</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1429.0</td>
+      <td>use deep learning for image classification</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1338.0</td>
+      <td>ml optimization using cognitive assistant</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1276.0</td>
+      <td>deploy your python model as a restful api</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[232]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_txt</span> <span class="o">=</span> <span class="n">df_content</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[233]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_txt</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[233]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>doc_body           14
+doc_description     3
+doc_full_name       0
+doc_status          0
+article_id          0
+dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[234]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_txt</span><span class="o">.</span><span class="n">doc_body</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_txt</span><span class="o">.</span><span class="n">doc_description</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_txt</span><span class="o">.</span><span class="n">doc_full_name</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[235]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_txt</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[235]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>doc_body           0
+doc_description    0
+doc_full_name      0
+doc_status         0
+article_id         0
+dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[236]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_txt</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_txt</span><span class="p">[</span><span class="s1">&#39;doc_body&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df_txt</span><span class="p">[</span><span class="s1">&#39;doc_description&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df_txt</span><span class="p">[</span><span class="s1">&#39;doc_full_name&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[237]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">))</span>
+<span class="n">punctuations</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">PorterStemmer</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">text_process</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="c1"># convert to lower case</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">]</span>
+    <span class="c1"># remove punctuation from each word</span>
+    <span class="n">stripped</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">punctuations</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">]</span>
+    <span class="c1"># remove remaining tokens that are not alphabetic</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">stripped</span> <span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()]</span>
+    <span class="c1"># filter out stop words</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+    <span class="n">stemmed</span> <span class="o">=</span> <span class="p">[</span><span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+    <span class="n">clean_text</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">stemmed</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">clean_text</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[238]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_txt</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_txt</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">text_process</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[239]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_txt</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[239]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0    skip navig sign searchload close yeah keep und...
+1    free hunch navig kagglecom kagglecom commun da...
+2    login sign learn path cours cours partner cour...
+3    datalay high throughput low latenc scale boost...
+4    skip navig sign searchload close yeah keep und...
+Name: text, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[240]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_txt</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[240]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>doc_body</th>
+      <th>doc_description</th>
+      <th>doc_full_name</th>
+      <th>doc_status</th>
+      <th>article_id</th>
+      <th>text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Skip navigation Sign in SearchLoading...\r\n\r...</td>
+      <td>Detect bad readings in real time using Python ...</td>
+      <td>Detect Malfunctioning IoT Sensors with Streami...</td>
+      <td>Live</td>
+      <td>0</td>
+      <td>skip navig sign searchload close yeah keep und...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>No Free Hunch Navigation * kaggle.com\r\n\r\n ...</td>
+      <td>See the forest, see the trees. Here lies the c...</td>
+      <td>Communicating data science: A guide to present...</td>
+      <td>Live</td>
+      <td>1</td>
+      <td>free hunch navig kagglecom kagglecom commun da...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>☰ * Login\r\n * Sign Up\r\n\r\n * Learning Pat...</td>
+      <td>Here’s this week’s news in Data Science and Bi...</td>
+      <td>This Week in Data Science (April 18, 2017)</td>
+      <td>Live</td>
+      <td>2</td>
+      <td>login sign learn path cours cours partner cour...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>DATALAYER: HIGH THROUGHPUT, LOW LATENCY AT SCA...</td>
+      <td>Learn how distributed DBs solve the problem of...</td>
+      <td>DataLayer Conference: Boost the performance of...</td>
+      <td>Live</td>
+      <td>3</td>
+      <td>datalay high throughput low latenc scale boost...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Skip navigation Sign in SearchLoading...\r\n\r...</td>
+      <td>This video demonstrates the power of IBM DataS...</td>
+      <td>Analyze NY Restaurant data using Spark in DSX</td>
+      <td>Live</td>
+      <td>4</td>
+      <td>skip navig sign searchload close yeah keep und...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[241]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_txt</span><span class="o">.</span><span class="n">article_id</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[241]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[242]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># make tfidf</span>
+<span class="n">tfidf_vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+<span class="n">article_tfidf</span> <span class="o">=</span> <span class="n">tfidf_vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df_txt</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+<span class="n">article_tfidf</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[242]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;1051x36484 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;
+	with 323805 stored elements in Compressed Sparse Row format&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[243]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># calculate cosine similarities</span>
+<span class="n">similarities</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">article_tfidf</span><span class="p">,</span><span class="n">article_tfidf</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[251]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_sim</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">similarities</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[253]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_sim</span><span class="p">[</span><span class="s1">&#39;article_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_txt</span><span class="p">[</span><span class="s1">&#39;article_id&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -15545,7 +16299,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load the matrix here</span>
@@ -15559,7 +16313,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># quick look at the matrix</span>
@@ -15567,214 +16321,6 @@ The top 10 recommendations for user 20 are the following article names:
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[58]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>article_id</th>
-      <th>0.0</th>
-      <th>100.0</th>
-      <th>1000.0</th>
-      <th>1004.0</th>
-      <th>1006.0</th>
-      <th>1008.0</th>
-      <th>101.0</th>
-      <th>1014.0</th>
-      <th>1015.0</th>
-      <th>1016.0</th>
-      <th>...</th>
-      <th>977.0</th>
-      <th>98.0</th>
-      <th>981.0</th>
-      <th>984.0</th>
-      <th>985.0</th>
-      <th>986.0</th>
-      <th>990.0</th>
-      <th>993.0</th>
-      <th>996.0</th>
-      <th>997.0</th>
-    </tr>
-    <tr>
-      <th>user_id</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 714 columns</p>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -15789,7 +16335,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Perform SVD on the User-Item Matrix Here</span>
@@ -15828,7 +16374,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_latent_feats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">700</span><span class="o">+</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
@@ -15859,28 +16405,6 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYIAAAEWCAYAAABrDZDcAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADh0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uMy4xLjAsIGh0dHA6Ly9tYXRwbG90bGliLm9yZy+17YcXAAAgAElEQVR4nO3deXwddb3/8dc7W9M23feVlFIKbaELtVBArLIIiBQFlIoCXgT9KaJeN3DhKnqvevWK9yqogAjKJotgQRQQKSoitKX7RtOFJl3TJW3TNs32+f0x35QhPW1O2pycc3I+z8djHpn5zpyZz8w5mc/Md2a+IzPDOedc7spLdwDOOefSyxOBc87lOE8EzjmX4zwROOdcjvNE4JxzOc4TgXPO5ThPBM4dgqR7JX03TcuWpF9L2iHptXTE4HKHJ4I0kDQr/IN3Sncs2UTSWkmbJXWNlX1C0qw0hpUqZwLnAkPNbErzkZKukfSP1s5U0jRJFW0RYJjftyTd38I0ayXtk1Qd6wYf5XLbdD1ynSeCdiapFHgnYMDF7bzsgvZcXooUAJ9LdxCtJSm/lR85BlhrZntSEU8avN/MSmLdhnQG00H+F9qMJ4L2dxXwL+Be4Or4CEmdJf2PpDcl7ZT0D0mdw7gzJf1TUpWkcknXhPJZkj4Rm8fbjhQlmaTPSFoJrAxl/xvmsUvSXEnvjE2fL+lrklZJ2h3GD5N0u6T/aRbvU5I+33wFJf1C0o+alf1B0r+H/q9KWh/mv0LS2a3Yfj8EviSpZ4Lllob1LYiVHdg+Ydu8LOm2sB1XSzo9lJdL2iLp6maz7Svp+RDrS5KOic37hDBue1iPD8XG3Svp55KekbQHeHeCeAdLmhk+XybpulB+LXA3MDUcPX+7FdsHSR+XtCzEvFrSJ0N5V+BPwOD4kbmkPEk3he98m6RHJPVutk2vlrRO0lZJXw/jzge+Bnw4zGtBa+IM8zgt9rteIGnaUazH26ry1OysQdGZyVclLQT2SCoIn3tcUqWkNZJujE0/RdKc8H+yWdKPW7t+WcPMvGvHDigDPg2cAtQBA2LjbgdmAUOAfOB0oBMwHNgNzAAKgT7AhPCZWcAnYvO4BvhHbNiA54HeQOdQ9tEwjwLgi8AmoDiM+zKwCBgNCBgfpp0CbADywnR9gb3x+GPLPAsoBxSGewH7gMFhvuXA4DCuFBiZ5LZbC5wD/B74bij7BDArNi8DCmKfObB9wrapBz4etu93gXVhu3cCzgvbuSRMf28YPiuM/9+mbQt0Devx8bAdJwFbgbGxz+4EziA64CpOsD4vAXcAxcAEoBI4O9H3mOCzhxwPvA8YGb6/d4XvaVIYNw2oaDb954kOToaG9fwl8FCzbXoX0Dn8HvYDJ4bx3wLuT+Z7S1A+BNgGXBi20blhuN8Rrse9Tb+LRNOEOOYDw8K65AFzgVuAIuBYYDXw3jD9K8DHQn8JcFq69x+p6tIeQC51RPW+dUDfMLwc+ELozyPaWY5P8LmbgScOMc9ZtJwI3tNCXDualgusAKYfYrplwLmh/wbgmUNMJ6Id7Flh+Drgr6H/OGAL0Q69sJXbb2343DiinWw/Wp8IVsbGnRSmjyfjbbyVZO8FHo6NKwEawo7kw8Dfm8X3S+A/Yp/9zWHWZViYV7dY2feAexN9jwk+f9jxzaZ9Evhc6J/GwTvQZYQEFIYHhd9pQWybDo2Nfw24IvR/i+QSQTVQFbonQ/lXgd82m/ZZ4OojXI97aTkR/Fts+FRgXYL/tV+H/r8B3yb8v3bkzquG2tfVwHNmtjUMP8hb1UN9iY4MVyX43LBDlCerPD4g6YvhlHunpCqgR1h+S8u6j+hsgvD3t4kmsui/6GGiMxiAjwAPhHFlREeg3wK2SHpYrbxwaGaLgaeBm1rzuWBzrH9fmF/zspLY8IFtZ2bVwHaiM5tjgFNDlUZV2I5XAgMTfTaBwcB2M9sdK3uT6Cj5qEi6QNK/QpVTFdERd9/DfOQY4InYeiwjSlIDYtNsivXv5e3bKBmXmFnP0F0SW+7lzbbhmUSJ6EjWIxnx7+QYouql+PK/xlvrfS1wPLBc0mxJFx3lsjOWXzBpJ4rq+j8E5Etq+qfqBPSUNJ6oOqaG6FS4eV1rOVHVTCJ7gC6x4YEJpjnQxKyi6wFfBc4GlphZo6QdREfxTcsaCSxOMJ/7gcUh3hOJjtAO5SHgOUnfJzry+sCBYMweBB6U1J3oKPoHwMcOM69E/gN4HYhft2i6sNoF2BX6E22P1hjW1COphKiKbQPRdnrJzM49zGcP17TvBqC3pG6xZDAcWH80wSq6E+1xomtRfzCzOklP8tb3myimcqIj5ZcTzK+0hUUeTfPF5URnBNclWO6RrEer/hfC8teY2ahEwZnZSmCGpDzgg8BjkvpYx7mAf4CfEbSfS4iOssYQ1QdPINqZ/h24yswagXuAH4cLWPmSpoZ/iAeAcyR9KFzg6iNpQpjvfOCDkrpIOo7oKOZwuhHVk1cCBZJuAbrHxt8NfEfSKEVOltQHwMwqgNlEZwKPm9m+Qy3EzOaFZdwNPGtmVQCSRkt6T1ivGqIj8IaWN99B8y8DfgfcGCurJNqRfjRsv38jSmpH40JFF+qLgO8Ar5pZOdEZyfGSPiapMHTvkHRikvGXA/8EviepWNLJRN/dA62ITeGzBzqiuu5ORNu+XtIFRNc+mmwG+kjqESv7BfCfChfCJfWTND3JGDYDpWFn2Vr3A++X9N7wfRWHC7xDj3A95hN9X70lDSQ68zyc14Bd4QJy5xDDOEnvAJD0UUn9wv9mVfhMq3+r2cATQfu5mqjucZ2ZbWrqgJ8BVyq60+VLRGcGs4mqIH5AdHF2HdFp8RdD+Xyii3YAtwG1RP8Y99HyjuRZojsu3iCqiqjh7afLPwYeAZ4jOqr+FdGFtSb3EdWtJ6wWauYhojr9B2NlnYDvE11Y3QT0JzodR9KVkpYkMd8mtxJdtI27juiC9zZgLNHO9mg8SHT2sZ3oAv+VAOEo/jzgCqKj+01E31drng2ZQVQHvwF4guj6wvOt+PzpRIm0eXcj0Xe4g6habmbTB8xsOdH3sjpUhwwmugg+k+gMbjfRheNTk4zh0fB3m6TXWxF7UzKcTvT9VxL9Dr9M9JvffQTr8Vuis+m1RL/f37Ww/Abg/UQHZWuIfpN3E1WVApwPLJFUTbSNrjCzmtasY7ZouqvDuaRIOovoSK40HCk557KcnxG4pEkqJHqY625PAs51HJ4IXFJC3XcV0R0dP0lzOM65NuRVQ845l+P8jMA553Jc1j1H0LdvXystLU13GM45l1Xmzp271cz6JRqXdYmgtLSUOXPmpDsM55zLKpLePNQ4rxpyzrkc54nAOedynCcC55zLcZ4InHMux3kicM65HJeyRCDpHkWv/kvUnDGhZcv/U/SKvoWSJqUqFuecc4eWyjOCe4la7zuUC4BRobse+HkKY3HOOXcIKXuOwMz+1sJLLaYTvcrPgH9J6ilpkJltTFVMzrmOqb6hkboGo7ahkbqGRuobjPrGpr9GQ2M03NBo1DW8fbi+0WhIMF19Y9OrHKO32UR/oyZ5msqwqKSh0WgMr/5t6m80o7GpnGg+TQ70trKJn7NPHMD4YT2PfoM1k84Hyobw9nbwK0LZQYlA0vVEZw0MHz68XYJzzh2ZuoZGqmvqqd4f62rq2VvbQF1DI7X1jewPf5uGm/r31zeyr7aBmvoGauoa2FfXSE1dQ6xrZH99A3UNRl1944Edf2MWN5kmtTxNk/7diztcIki0+gm/TjO7E7gTYPLkyVn8lTuX+Robjd019WzfW8v2Pfup2lvHrpo6du2rZ9e+WH/NW/27a+qo3l/P7pp69te3voVyCYry8+hUkEfnonyKC/MpLsinuCif4oI8enctioYL8+hUkE9RQR6F+XkUFoii/NCfn0dhvg6My88TBXkiP08HDRfk5VGQ//bh/DxRkK8D0+Up6m+KTyj8bQo6KssT5Enk5b3Vn58XTZsnha5pPVux129H6UwEFcTeBwsMJXpTk3OuDe2rbWDbnv3s2FPH9r217NhTy/Y9tezYG/3d3mx4x946Gg5ziN25MJ/unQvoXlxI986F9C0porRvV7oVF9CtUwFdOxVQ0qmAkjBcUhwNdy7Kpyg/j6KCqOuUn39gR16Q7zcwplM6E8FM4AZJDxO9Fm+nXx9wLnn1DY1UVu9nQ1UNG3fuY9POmgP9G3fWsGVXDdv31lJTl/gIPU/Qq0sRvbsW0atrEcf2LWFyaRG9u0TDvbsW0qtLEb26FNGjc2G0oy8upKjAd9odTcoSgaSHgGlAX0kVRO99LQQws18AzxC9h7cM2At8PFWxOJdNzIxd++rZvLuGzbtq2Lxrf/j79uEtu/cfdOTeuTCfQT2LGdyjM8eO7EPfkk5hZx/t1PuUFB3Y+XcvLiQvLzOrKlz7SuVdQzNaGG/AZ1K1fOcyXX1DI29u38vKzdWUbdnNyi3VvLG5mjVbqxMexXcvLmBA92IG9ijm2H59GNyj84Gd/sAe0d/unQsyth7aZa6sa4bauWzT0Gi8uW0Pb2zezYpN1azcspuyLdWsrtxDbcNbO/whPTszakAJU4/tw+CexfTvXszA7sUM6N6J/t2K6VyUn8a1cB2ZJwLn2oiZsb5q34EdfvR3N2WV1dSGO2kkGNarC8cPKGHa6P6M6l/CqAEljOxXQtdO/u/o0sN/ec4doa3V+5m/rop55TuYt66KhRU7qd5ff2D8oB7FHD+gG2eO6svxA7oxekA3jutf4kf2LuN4InAuCbX1jSzduIt566Kd/rzyHZRv3wdAQZ44cVB3Lpk4mBMHdWf0gG6MGtCNHp0L0xy1c8nxROBcM01VPPPWVTG/vIp563aweMOuA9U7g3oUM3F4T646rZQJw3sybnAPP8p3Wc0Tgct5e2vrWVixMzrSX7eDeeVVVO7eD0CngjxOHtqDq6cew6ThvZgwvCeDenROc8TOtS1PBC7nmBnLN+1m1opKZq3Ywtw3d1Af7scv7dOFM4/ry8ThPZk4rBcnDOpGoT/16jo4TwQuJ+yuqePlsq1h51/Jpl01AJwwsBvXvnMEp47ozYRhvejdtSjNkTrX/jwRuA5rVWU1f1m6mRdXbGHO2uiov1unAs4c1Zdpo/vxruP7M7BHcbrDdC7tPBG4DqOx0ZhfUcVzSzbz/NJNrKrcA0RH/Z9457FMG92PU47p5VU9zjXjicBltf31Dfxz1TaeW7KZvyzbTOXu/RTkidOO7cNVU0s5Z8wAhvT0i7vOHY4nApd1zIx/rtrGQ6+t48XlW9hT20DXonymje7PeWMHMG10f7+H37lW8ETgssbOvXU89noFD/zrTVZv3UOvLoVcPGEI540dwOkj+9CpwO/ld+5IeCJwGW9hRRW/feVNnlq4gZq6RiYN78ltHx7PBeMGUVzoO3/njpYnApeR9tU28NSCDdz/6pssrNhJl6J8PjBxKB89bThjB/dId3jOdSieCFxG2bSzhvteWcuDr65j5746RvUv4dbpY7lk4hC6F3u9v3Op4InAZYTF63fyq3+s4akFG2g0471jB3L16aWcOqK3v2jFuRTzRODSprHReGH5Fu7++2peXbOdrkX5XDW1lI+fUcqw3l3SHZ5zOcMTgWt3e2vreXxuBfe8vJY1W/cwuEcxX7/wRD48ZZhX/ziXBp4IXLtpaDR+N7ucHz23gu17ahk/rCc/nTGRC8YNpMCf9nUubTwRuHbx6uptfPuppSzduIspI3rzlfeO5pRjenn9v3MZIKWJQNL5wP8C+cDdZvb9ZuOPAe4B+gHbgY+aWUUqY3Ltq2LHXr73p+X8ceFGBvco5mcfmcj7ThrkCcC5DJKyRCApH7gdOBeoAGZLmmlmS2OT/Qj4jZndJ+k9wPeAj6UqJtd+9tU28POXVvHLl1YhwRfOOZ7rzzrW3+TlXAZK5RnBFKDMzFYDSHoYmA7EE8EY4Auh/0XgyRTG49qBmfHUwo18/5llbNhZw0UnD+LmC0/0ht+cy2CpTARDgPLYcAVwarNpFgCXElUffQDoJqmPmW2LTyTpeuB6gOHDh6csYHd0VldWc9PvF/Hamu2MGdSdn1wxkSkjeqc7LOdcC1KZCBJVAluz4S8BP5N0DfA3YD1Qf9CHzO4E7gSYPHly83m4NKtvaOTuf6zhx8+/QXFBHv/1gZP48DuGkZ/n1wGcywapTAQVwLDY8FBgQ3wCM9sAfBBAUglwqZntTGFMro0t37SLrzy2kIUVO3nv2AF8Z/o4+nf3t345l01SmQhmA6MkjSA60r8C+Eh8Akl9ge1m1gjcTHQHkcsCtfWN3P5iGXfMKqN7cSG3f2QSF5400O8Gci4LpSwRmFm9pBuAZ4luH73HzJZIuhWYY2YzgWnA9yQZUdXQZ1IVj2s7Cyuq+MpjC1m+aTeXTBjMLe8f6y99dy6LySy7qtwnT55sc+bMSXcYOammroHb/vIGd/1tNf27FfOfHxjH2ScOSHdYzrkkSJprZpMTjfMni11SFpRX8YVH5rO6cg8zpgzj5gtP9HaBnOsgPBG4w6priK4F/PSvZQzo1okHPnEqZxzXN91hOefakCcCd0irK6v5wiMLWFBexQcnDuE/Lh7rL4V3rgPyROAOYmbc/+o6/vOPSykuzOf2j0zifScPSndYzrkU8UTg3mbzrhq+8thCXnqjkrOO78cPLzuZAf5cgHMdmicCd8AzizbytScWUVPXwHemj+Wjpx3jzwU4lwM8EThq6xv5xpOLeGROBeOH9uDHH57AyH4l6Q7LOddOPBHkuN01dXzq/rm8XLaNz77nOG48exSF/rYw53KKJ4IctnlXDdf8ejYrN+/mR5eP57JThqY7JOdcGngiyFFlW3Zz9T2z2bG3ll9d8w7edXy/dIfknEsTTwQ5aM7a7Vx73xwK8/P43fVTOWloj3SH5JxLI08EOebPizfxuYfnMbhnZ+77+BSG9+mS7pCcc2nmiSCH/PaVtdwycwnjh/bknmve4S2GOucATwQ5wcz44bMruGPWKs45sT8/nTHJXyLvnDvAE0EHZ2Z87YlFPPRaOTOmDOM708dR4LeHOudiPBF0cHf/fQ0PvVbOp941kq+eP9qfFHbOHcQPDTuwF1ds4Xt/WsaFJw3kK+/1JOCcS8wTQQe1qrKaGx+ax+iB3fnR5ePJy/Mk4JxLzBNBB7RzXx3X3TeHovw87rrqFLoUeQ2gc+7QfA/RwTQ0Gp99aB7rtu/lwetOY2gvf07AOXd4ngg6mO//aRl/e6OS733wJKaM6J3ucJxzWSClVUOSzpe0QlKZpJsSjB8u6UVJ8yQtlHRhKuPp6B6fW8Fdf1/D1VOPYcaU4ekOxzmXJVKWCCTlA7cDFwBjgBmSxjSb7BvAI2Y2EbgCuCNV8XR0r6/bwc2/X8TpI/vwjYuab2bnnDu0VJ4RTAHKzGy1mdUCDwPTm01jQPfQ3wPYkMJ4OqxNO2v45G/nMrBHMbd/ZJK/T8A51yqp3GMMAcpjwxWhLO5bwEclVQDPAJ9NNCNJ10uaI2lOZWVlKmLNWjV1DXzyt3PYu7+eu66aTC9vP8g510qpTASJbly3ZsMzgHvNbChwIfBbSQfFZGZ3mtlkM5vcr5+3mx/39ScWs3D9Tn5yxURGD+yW7nCcc1kolYmgAhgWGx7KwVU/1wKPAJjZK0Ax0DeFMXUoT8yr4PHXK7jxPaM4d8yAdIfjnMtSqUwEs4FRkkZIKiK6GDyz2TTrgLMBJJ1IlAi87icJb27bwzeeWMyU0t7cePaodIfjnMtiKUsEZlYP3AA8CywjujtoiaRbJV0cJvsicJ2kBcBDwDVm1rz6yDVT19DIjQ/PJz9P3HbFBPK9+Qjn3FFI6QNlZvYM0UXgeNktsf6lwBmpjKEj+vHzb7CgvIqfXzmJIT07pzsc51yW8/sMs8w/y7byi5dWMWPKMC44aVC6w3HOdQCeCLLI9j21fP538zm2b1e+6Q+NOefaiLc1lCXMjK88toCqvXXc+/Ep3qKoc67N+BlBlvjNK2/yl2VbuOmCExgzuHvLH3DOuSR5IsgCyzbu4j+fWca7R/fj42eUpjsc51wH44kgw+2rbeDGh+bRvbiQH14+3l836Zxrc17RnOG++8elrNxSzW/+bQp9SzqlOxznXAfkZwQZ7Nklm3jg1XVcf9axnHW8t7HknEsNTwQZaseeWr72+0WMHdydL503Ot3hOOc6MK8aylDfeXopO/fVcf8nTqWowPO1cy51fA+TgV5csYXfz1vPp6eN5MRBfquocy61PBFkmOr99Xz994s4rn8Jn3nPcekOxzmXA7xqKMP88M/L2birhsc+NZVOBfnpDsc5lwNaPCOQdIOkXu0RTK6bvXY7v/nXm1w9tZRTjumd7nCcczkimaqhgcBsSY9IOl/+RFNK1NQ18NXHFzK4R2e+/F6/S8g5135aTARm9g1gFPAr4BpgpaT/kjQyxbHllJ/+dSWrK/fwvQ+eRNdOXmPnnGs/SV0sDm8N2xS6eqAX8Jik/05hbDljyYad/PKl1Vw6aag/OOaca3ctHnpKuhG4GtgK3A182czqJOUBK4GvpDbEjq2+oZGvPr6Qnl0K+eZFJ6Y7HOdcDkqmDqIv8EEzezNeaGaNki5KTVi54+5/rGHx+l3cceUkenYpSnc4zrkclEzV0DPA9qYBSd0knQpgZstSFVguWLN1D7c9/wbvHTuAC8YNTHc4zrkclUwi+DlQHRveE8paFO4yWiGpTNJNCcbfJml+6N6QVJVc2NmvsdG46fGFFBXkcev0cd68tHMubZKpGlK4WAwcqBJK5tpCPnA7cC5QQXQL6kwzWxqb1xdi038WmNia4LPZw7PLeXXNdn5w6UkM6F6c7nCcczksmTOC1ZJulFQYus8Bq5P43BSgzMxWm1kt8DAw/TDTzwAeSmK+WW9/fQP/+8IbvKO0Fx+aPCzd4TjnclwyieBTwOnAeqIj+1OB65P43BCgPDZcEcoOIukYYATw10OMv17SHElzKisrk1h0Znt87no279rP584+3quEnHNp12IVj5ltAa44gnkn2sNZgjLC/B8zs4ZDxHAncCfA5MmTDzWPrFDf0MgvXlrF+KE9OOO4PukOxznnknqOoBi4FhgLHKjMNrN/a+GjFUC83mMosOEQ014BfKalWDqCpxduZN32vXzjfaf42YBzLiMkUzX0W6L2ht4LvES0Q9+dxOdmA6MkjZBURLSzn9l8IkmjiZ5UfiXZoLNVY6Nxx6wyjh9QwjknDkh3OM45BySXCI4zs28Ce8zsPuB9wEktfcjM6oEbgGeBZcAjZrZE0q2SLo5NOgN4OH5nUkf1/LLNvLG5mk9PO468PD8bcM5lhmRuH60Lf6skjSNqb6g0mZmb2TNED6TFy25pNvytZOaV7cyMO14sY3jvLlx08qB0h+Occwckc0ZwZ3gfwTeIqnaWAj9IaVQd0Mtl21hQsZNPvWskBfn+YjjnXOY47BlBaFhul5ntAP4GHNsuUXVAP3txJQO6d+LSUxLeQeucc2lz2ENTM2skqud3R2Hum9v51+rtXPfOY/31k865jJNMHcXzkr4kaZik3k1dyiPrQO54cRW9uhQyY8rwdIfinHMHSeZicdPzAvH7/A2vJkrK0g27eGH5Fv793OP9zWPOuYyUzJPFI9ojkI7qjllllHQq4OqppekOxTnnEkrmyeKrEpWb2W/aPpyOZXVlNX9ctJFPnjWSHl0K0x2Oc84llExdxTti/cXA2cDrgCeCFvzipVUU5edx7Zl+UuWcy1zJVA19Nj4sqQdRsxPuMNZX7eP3r6/nylOH069bp3SH45xzh3QkTzbtBUa1dSAdzV1/i17ZcP27RqY5EuecO7xkrhE8xVvNR+cBY4BHUhlUtttavZ+HXlvHByYOYUjPzukOxznnDiuZawQ/ivXXA2+aWUWK4ukQ7n15LbUNjXxqmp8NOOcyXzKJYB2w0cxqACR1llRqZmtTGlmWqm9o5JE55bx7dH9G9itJdzjOOdeiZK4RPAo0xoYbQplL4O8rt7Jl934+NHloukNxzrmkJJMICsLL5wEI/UWpCym7PTq3nN5di3jPCf7iGedcdkgmEVTGXyQjaTqwNXUhZa/te2p5fulmpk8YTFGBNzXtnMsOyVwj+BTwgKSfheEKIOHTxrnuD/PXU9dgXH7KsJYnds65DJHMA2WrgNMklQAys2TeV5yTHp1Twbgh3RkzuHu6Q3HOuaS1WH8h6b8k9TSzajPbLamXpO+2R3DZZMmGnSzduMvPBpxzWSeZiuwLzKyqaSC8rezC1IWUnR6dU0FRfh7TJwxOdyjOOdcqySSCfEkHGsuR1BnwxnNi9tc38If56zl37AB6dvEbqpxz2SWZRHA/8IKkayVdCzwP3JfMzCWdL2mFpDJJNx1img9JWippiaQHkw89c7ywbAs79tZx+Sn+7IBzLvskc7H4vyUtBM4BBPwZOKalz0nKB24HziW602i2pJlmtjQ2zSjgZuAMM9shqf+RrUZ6PTqnnIHdi3nnqH7pDsU551ot2ZvdNxE9XXwp0fsIliXxmSlAmZmtDg+hPQxMbzbNdcDt4boDZrYlyXgyxuZdNbz0RiUfnDSE/DylOxznnGu1Q54RSDoeuAKYAWwDfkd0++i7k5z3EKA8NlwBnNpsmuPDsl4G8oFvmdmfE8RyPXA9wPDhmfUC+N+/vp5Gg8u8Wsg5l6UOd0awnOjo//1mdqaZ/ZSonaFkJTo8tmbDBUTvNphGlHDultTzoA+Z3Wlmk81scr9+mVP9YmY8Orecd5T24lhvYM45l6UOlwguJaoSelHSXZLOJvHO/VAqgPhN9UOBDQmm+YOZ1ZnZGmAFWfTSm9fX7WB15R5/dsA5l9UOmQjM7Akz+zBwAjAL+AIwQNLPJZ2XxLxnA6MkjZBURFTNNLPZNE8C7waQ1Jeoqmh1q9ciTR6dU0HnwnwuPHlQukNxzrkj1uLFYjPbY2YPmNlFREf184GEt4I2+1w9cAPwLNHF5UfMbImkW2ON2D0LbJO0FHgR+LKZbTvCdWlXe2vreXrhRi48aRAlnZJpssk55zJTq/ZgZrYd+GXokpn+GeCZZmW3xEowDcUAABB+SURBVPoN+PfQZZU/L95E9f56Lvf3Djjnspy3lXyEHp1TwTF9unDqiN7pDsU5546KJ4IjsG7bXl5ZvY3LJg1F8mcHnHPZzRPBEXjs9QokuNSfHXDOdQCeCFqpsdF4fG4FZx7Xl8E9O6c7HOecO2qeCFrpldXbWF+1j8sn+7MDzrmOwRNBKz3+egXdigs4b4y/nN451zF4ImiFmroGnluymQvGDaS4MD/d4TjnXJvwRNAKLy7fQvX+ei4ePyTdoTjnXJvxRNAKMxdsoG9JJ6aO7JPuUJxzrs14IkjS7po6Xli+hfedNNDfO+Cc61A8ESTp+aWbqa1v5GJ/Ob1zroPxRJCkmQs2MKRnZyYN75XuUJxzrk15IkjC9j21/GPlVt4/frA3KeGc63A8ESThmUUbqW803j/e3zvgnOt4PBEk4akFGxjZrytjBnVPdyjOOdfmPBG0YNPOGl5bu52Lxw/xaiHnXIfkiaAFTy/cgBl+t5BzrsPyRNCCmQs2cNKQHozo2zXdoTjnXEp4IjiMNVv3sLBip18kds51aJ4IDuPpBRsAuOhkrxZyznVcnggOwcyYuWADU0p7+wtonHMdWkoTgaTzJa2QVCbppgTjr5FUKWl+6D6RynhaY/mm3azcUs37/SKxc66DK0jVjCXlA7cD5wIVwGxJM81sabNJf2dmN6QqjiM1c8EG8vPEheMGpjsU55xLqVSeEUwBysxstZnVAg8D01O4vDZjZjy1YANnHNeXPiWd0h2Oc86lVCoTwRCgPDZcEcqau1TSQkmPSUr4ImBJ10uaI2lOZWVlKmJ9m3nlVVTs2MfF471ayDnX8aUyESR6DNeaDT8FlJrZycBfgPsSzcjM7jSzyWY2uV+/fm0c5sFmzt9AUUEe54319xI75zq+VCaCCiB+hD8U2BCfwMy2mdn+MHgXcEoK40lKQ6Pxx0UbeffofnQvLkx3OM45l3KpTASzgVGSRkgqAq4AZsYnkBR/UutiYFkK40nKv1Zvo3L3fn8vsXMuZ6TsriEzq5d0A/AskA/cY2ZLJN0KzDGzmcCNki4G6oHtwDWpiidZTy3YQNeifM4+sX+6Q3HOuXaRskQAYGbPAM80K7sl1n8zcHMqY2iN2vpG/rR4E+eNHUhxYX66w3HOuXbhTxbH/O2NSnbuq/O7hZxzOcUTQcysN7ZQ0qmAM47rm+5QnHOu3XgiiJlfXsXJQ3tQVOCbxTmXO3yPF9TUNbB8424mDOuZ7lCcc65deSIIFq/fSX2jeSJwzuUcTwTB/PIqACYM90TgnMstngiC+eVVDOnZmf7ditMdinPOtStPBMH88iqvFnLO5SRPBMDW6v1U7NjnicA5l5M8EQDz1/n1Aedc7vJEQFQtlJ8nxg3uke5QnHOu3XkiIEoEJwzsRucib1/IOZd7cj4RNDYaC/xCsXMuh+V8Ili9tZrd++s9ETjnclbOJ4J54ULxRL9Q7JzLUTmfCOaXV9GtuIBj+5akOxTnnEsLTwTlVYwf2pO8PKU7FOecS4ucTgT7ahtYvslbHHXO5bacTgSLN+ykwVscdc7luJxOBE1PFI/3ROCcy2EpTQSSzpe0QlKZpJsOM91lkkzS5FTG01xTi6P9unVqz8U651xGSVkikJQP3A5cAIwBZkgak2C6bsCNwKupiuVQ5pdXeftCzrmcl8ozgilAmZmtNrNa4GFgeoLpvgP8N1CTwlgOsmV3Deur9jHRq4WcczkulYlgCFAeG64IZQdImggMM7OnUxhHQgdaHPVE4JzLcalMBIluzLcDI6U84Dbgiy3OSLpe0hxJcyorK9skuPnlVRTkiXFDvMVR51xuS2UiqACGxYaHAhtiw92AccAsSWuB04CZiS4Ym9mdZjbZzCb369evTYKbX17FCYO6UVzoLY4653JbKhPBbGCUpBGSioArgJlNI81sp5n1NbNSMysF/gVcbGZzUhgTAA2NxsKKnV4t5JxzpDARmFk9cAPwLLAMeMTMlki6VdLFqVpuMlZVVlO9v54Jw3qlMwznnMsIBamcuZk9AzzTrOyWQ0w7LZWxxPmFYuece0tOPlk870CLo13THYpzzqVdTiaC+eGNZN7iqHPO5WAi2Ftbz4pNu7xayDnngpxLBIsqdtJofn3AOeea5FwimF/uF4qdcy4uJxPBsN6d6VPiLY465xzkaCLw5wecc+4tOZUINu+qYePOGq8Wcs65mJxKBPP8QTLnnDtITiWC+eVVFOaLsYO7pzsU55zLGDmWCHZw4qDu3uKoc87F5EwiaGg0FnmLo845d5CcSQRlW6rZU9vgicA555rJmUQwv3wH4BeKnXOuuZxJBL26FHHumAGM8BZHnXPubVL6PoJMct7YgZw3dmC6w3DOuYyTM2cEzjnnEvNE4JxzOc4TgXPO5ThPBM45l+M8ETjnXI7zROCccznOE4FzzuU4TwTOOZfjZGbpjqFVJFUCbyY5eV9gawrDSYVsiznb4gWPub1kW8zZFi+0LuZjzKxfohFZlwhaQ9IcM5uc7jhaI9tizrZ4wWNuL9kWc7bFC20Xs1cNOedcjvNE4JxzOa6jJ4I70x3AEci2mLMtXvCY20u2xZxt8UIbxdyhrxE455xrWUc/I3DOOdcCTwTOOZfjOmQikHS+pBWSyiTdlO54mki6R9IWSYtjZb0lPS9pZfjbK5RL0v+FdVgoaVKaYh4m6UVJyyQtkfS5TI5bUrGk1yQtCPF+O5SPkPRqiPd3kopCeacwXBbGl7ZnvM1iz5c0T9LT2RCzpLWSFkmaL2lOKMvI30Us5p6SHpO0PPymp2ZyzJJGh+3b1O2S9Pk2j9nMOlQH5AOrgGOBImABMCbdcYXYzgImAYtjZf8N3BT6bwJ+EPovBP4ECDgNeDVNMQ8CJoX+bsAbwJhMjTsstyT0FwKvhjgeAa4I5b8A/l/o/zTwi9B/BfC7NP4+/h14EHg6DGd0zMBaoG+zsoz8XcTiuw/4ROgvAnpmesyx2POBTcAxbR1z2lYqhRtrKvBsbPhm4OZ0xxWLp7RZIlgBDAr9g4AVof+XwIxE06U5/j8A52ZD3EAX4HXgVKKnLwua/0aAZ4Gpob8gTKc0xDoUeAF4D/B0+EfO9JgTJYKM/V0A3YE1zbdVJsfcLM7zgJdTEXNHrBoaApTHhitCWaYaYGYbAcLf/qE849YjVEFMJDrKzti4QxXLfGAL8DzRGWKVmdUniOlAvGH8TqBPe8Yb/AT4CtAYhvuQ+TEb8JykuZKuD2UZ+7sgqiWoBH4dquDultSVzI457grgodDfpjF3xESgBGXZeI9sRq2HpBLgceDzZrbrcJMmKGvXuM2swcwmEB1lTwFOPExMaY9X0kXAFjObGy9OMGnGxBycYWaTgAuAz0g66zDTZkLMBURVsz83s4nAHqJqlUPJhJgBCNeHLgYebWnSBGUtxtwRE0EFMCw2PBTYkKZYkrFZ0iCA8HdLKM+Y9ZBUSJQEHjCz34fijI/bzKqAWUR1pT0lFSSI6UC8YXwPYHv7RsoZwMWS1gIPE1UP/YTMjhkz2xD+bgGeIEq6mfy7qAAqzOzVMPwYUWLI5JibXAC8bmabw3CbxtwRE8FsYFS446KI6HRqZppjOpyZwNWh/2qiOvim8qvCXQCnATubTgXbkyQBvwKWmdmPY6MyMm5J/ST1DP2dgXOAZcCLwGWHiLdpPS4D/mqhcrW9mNnNZjbUzEqJfq9/NbMryeCYJXWV1K2pn6j+ejEZ+rsAMLNNQLmk0aHobGBpJsccM4O3qoWgrWNO14WPFF9UuZDo7pZVwNfTHU8sroeAjUAdUea+lqhu9wVgZfjbO0wr4PawDouAyWmK+UyiU8uFwPzQXZipcQMnA/NCvIuBW0L5scBrQBnR6XWnUF4chsvC+GPT/BuZxlt3DWVszCG2BaFb0vR/lqm/i1jcE4A54ffxJNArC2LuAmwDesTK2jRmb2LCOedyXEesGnLOOdcKngiccy7HeSJwzrkc54nAOedynCcC55zLcZ4I3FGTZJL+Jzb8JUnfaqN53yvpspanPOrlXB5ao3yxWXmpYq3FJjGfSySNOYo4SiV95DDj9jVrjbKoLZfhcpMnAtcW9gMflNQ33YHEScpvxeTXAp82s3cf5WIvIWqd9UiVAofbSa8yswmxrjYFy0ioldvTZRFPBK4t1BO9O/ULzUc0P6KXVB3+TpP0kqRHJL0h6fuSrlT0LoFFkkbGZnOOpL+H6S4Kn8+X9ENJs0O765+MzfdFSQ8SPVDTPJ4ZYf6LJf0glN1C9ODcLyT9MJkVlnRdWPYCSY9L6iLpdKL2YH4YjtZHhu7PoWG2v0s6IbZd/k/SPyWtjm2j7wPvDJ8/aHseIpauit51MVtRY2rTQ3lpWObroTs90TIkXSPpZ7H5PS1pWuivlnSrpFeBqZJOCd/bXEnP6q1mDm6UtDR8Fw8nE7fLIOl4Us67jtUB1URN/K4lavfmS8C3wrh7gcvi04a/04AqoiZ0OwHrgW+HcZ8DfhL7/J+JDlpGET2RXQxcD3wjTNOJ6GnREWG+e4ARCeIcDKwD+hE1QPZX4JIwbhYJnsKkWbPhsfI+sf7vAp89xPq+AIwK/acSNQfRNN2jYb3GAGWx7fL0IbZzKbCPt57wvj2U/xfw0dDfk+ip+q5ET6QWh/JRwJxEywCuAX4WG34amBb6DfhQ6C8E/gn0C8MfBu4J/Rt468nnnun+TXrXuq6pQSvnjoqZ7ZL0G+BGop1VMmZbaAdF0irguVC+CIhX0TxiZo3ASkmrgROI2rY5OXYk3YNoZ1cLvGZmaxIs7x3ALDOrDMt8gOhlQU8mGW/cOEnfJdrxlhC9I+BtFLXYejrwqHSgUchOsUmeDOu1VNKAJJe7yqKWVePOI2q07kthuBgYTrRz/pmkCUADcHySy4hrIGpwEGA0MA54PqxPPlGTKRA12fCApCc5su3p0sgTgWtLPyF6EcyvY2X1hCpIRXuP+MXN/bH+xthwI2//bTZvB8WI2lT5rJm9bQccqjT2HCK+RE30Hql7ic4mFki6hugou7k8oncKNN9xN4mv/9HEJuBSM1vxtsLogv1mYHyIpeYQnz/wHQXFsf4aM2uILWeJmU1NMI/3ESXVi4FvShprb71LwWU4v0bg2oyZbSd6veK1seK1wCmhfzpR9UJrXS4pL1w3OJborUvPAv9PURPZSDpeUSuYh/Mq8C5JfcOFzxnAS0cQD0Sv7dwYln9lrHx3GIdF721YI+nyEKMkjW9hvgc+3wrPAp8NiRZJE0N5D2BjOOv4GNERfKJlrAUmhG08jKg56URWAP0kTQ3LKZQ0VlIeMMzMXiR6uU7TWZLLEp4IXFv7HyB+99BdRDvf14jqyA91tH44K4h22H8CPmVmNcDdRE0Iv67o9s5f0sIZbqiGupmoeecFRO27/+FwnwlGS6qIdZcD3yRKLM8Dy2PTPgx8OVy0HUmUJK6V1NRK5/QWlrUQqA8XoZO6WAx8hyjBLgzb4juh/A7gakn/IqoWatr2zZfxMtErHBcBPyI6qzuIRXcoXQb8IKzPfKKqr3zgfkmLiFp+vc2id0G4LOGtjzrnXI7zMwLnnMtxngiccy7HeSJwzrkc54nAOedynCcC55zLcZ4InHMux3kicM65HPf/AU0GZRvuMdKKAAAAAElFTkSuQmCC
-"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -15899,7 +16423,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[101]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_train</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">40000</span><span class="p">)</span>
@@ -15939,7 +16463,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">user_item_train</span><span class="p">,</span> <span class="n">user_item_test</span><span class="p">,</span> <span class="n">test_idx</span><span class="p">,</span> <span class="n">test_arts</span>
@@ -15949,1671 +16473,10 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[102]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(article_id  0.0     2.0     4.0     8.0     9.0     12.0    14.0    15.0    \
- user_id                                                                      
- 1                0       0       0       0       0       0       0       0   
- 2                0       0       0       0       0       0       0       0   
- 3                0       0       0       0       0       1       0       0   
- 4                0       0       0       0       0       0       0       0   
- 5                0       0       0       0       0       0       0       0   
- 6                0       0       0       0       0       0       0       0   
- 7                0       0       0       0       0       0       0       0   
- 8                0       0       0       0       0       0       1       0   
- 9                0       0       0       0       0       0       1       0   
- 10               0       0       0       0       0       0       0       0   
- 11               0       0       0       0       0       1       0       0   
- 12               0       0       0       0       0       0       1       0   
- 13               0       0       0       0       0       0       1       0   
- 14               0       0       0       0       0       0       0       0   
- 15               0       0       0       0       0       0       0       0   
- 16               0       0       0       0       0       0       0       0   
- 17               0       0       0       0       0       0       0       0   
- 18               0       0       0       0       0       0       0       0   
- 19               0       0       0       0       0       0       0       0   
- 20               0       0       0       0       0       0       0       0   
- 21               0       0       0       0       0       0       1       0   
- 22               0       0       0       0       0       1       0       0   
- 23               0       1       0       0       0       1       1       0   
- 24               0       0       0       0       0       0       0       0   
- 25               0       0       0       0       0       0       0       0   
- 26               0       0       0       0       0       0       0       0   
- 27               0       0       0       0       0       0       0       0   
- 28               0       0       0       0       0       1       0       0   
- 29               0       0       0       0       0       0       0       0   
- 30               0       0       0       0       0       0       0       0   
- ...            ...     ...     ...     ...     ...     ...     ...     ...   
- 4458             0       0       0       0       0       0       0       0   
- 4459             0       0       0       0       0       0       0       0   
- 4460             0       0       0       0       0       0       0       0   
- 4461             0       0       0       0       0       0       0       0   
- 4462             0       0       0       0       0       0       0       0   
- 4463             0       0       0       0       0       0       0       0   
- 4464             0       0       0       0       0       0       0       0   
- 4465             0       0       0       0       0       0       0       0   
- 4466             0       0       0       0       0       0       0       0   
- 4467             0       0       0       0       0       0       0       0   
- 4468             0       0       0       0       0       0       0       0   
- 4469             0       0       0       0       0       0       0       0   
- 4470             0       0       0       0       0       0       0       0   
- 4471             0       0       0       0       0       1       0       0   
- 4472             0       0       0       0       0       0       0       0   
- 4473             0       0       0       0       0       0       0       0   
- 4474             0       0       0       0       0       0       0       0   
- 4475             0       0       0       0       0       0       0       0   
- 4476             0       0       0       0       0       0       0       0   
- 4477             0       0       0       0       0       0       0       0   
- 4478             0       0       0       0       0       0       0       0   
- 4479             0       0       0       0       0       0       0       0   
- 4480             0       0       0       0       0       0       0       0   
- 4481             0       0       0       0       0       0       0       0   
- 4482             0       0       0       1       0       0       0       0   
- 4483             0       0       0       0       0       0       0       0   
- 4484             0       1       0       1       0       0       0       0   
- 4485             0       0       0       0       0       0       0       0   
- 4486             0       0       0       0       0       0       0       0   
- 4487             0       0       0       1       0       0       0       0   
- 
- article_id  16.0    18.0    ...  1434.0  1435.0  1436.0  1437.0  1439.0  \
- user_id                     ...                                           
- 1                0       0  ...       0       0       1       0       1   
- 2                0       0  ...       0       0       0       0       0   
- 3                0       0  ...       0       0       1       0       0   
- 4                0       0  ...       0       0       0       0       0   
- 5                0       0  ...       0       0       0       0       0   
- 6                0       0  ...       0       0       1       0       0   
- 7                0       0  ...       0       0       0       0       0   
- 8                0       0  ...       0       0       1       0       0   
- 9                1       0  ...       0       0       0       0       0   
- 10               0       0  ...       0       0       0       0       0   
- 11               0       0  ...       0       0       0       0       0   
- 12               0       0  ...       0       0       0       0       0   
- 13               0       0  ...       0       0       0       0       0   
- 14               0       0  ...       0       0       0       0       0   
- 15               0       0  ...       0       0       0       0       0   
- 16               0       0  ...       0       0       0       0       0   
- 17               0       0  ...       0       0       0       0       0   
- 18               0       0  ...       0       0       0       0       0   
- 19               0       0  ...       0       0       0       0       0   
- 20               0       0  ...       0       0       0       0       0   
- 21               0       0  ...       0       0       1       1       0   
- 22               0       0  ...       0       0       0       0       0   
- 23               1       0  ...       0       0       1       0       1   
- 24               0       0  ...       0       0       0       0       0   
- 25               0       0  ...       0       0       0       0       0   
- 26               0       0  ...       0       0       1       0       0   
- 27               0       0  ...       0       0       0       0       0   
- 28               0       0  ...       0       0       0       0       0   
- 29               0       0  ...       0       0       0       0       0   
- 30               0       0  ...       0       0       0       0       0   
- ...            ...     ...  ...     ...     ...     ...     ...     ...   
- 4458             0       0  ...       0       0       0       0       0   
- 4459             0       1  ...       0       1       1       1       0   
- 4460             0       0  ...       0       0       0       0       0   
- 4461             0       0  ...       0       0       0       0       0   
- 4462             0       0  ...       0       0       0       0       0   
- 4463             0       0  ...       0       0       0       0       0   
- 4464             0       0  ...       0       0       0       0       0   
- 4465             0       0  ...       0       0       0       0       0   
- 4466             0       0  ...       0       0       0       0       0   
- 4467             0       0  ...       0       0       0       0       0   
- 4468             0       0  ...       0       0       0       0       0   
- 4469             0       0  ...       0       0       0       0       0   
- 4470             0       0  ...       0       0       0       0       0   
- 4471             0       0  ...       0       0       0       0       0   
- 4472             0       0  ...       0       0       0       0       0   
- 4473             0       0  ...       0       0       0       0       0   
- 4474             0       0  ...       0       0       0       0       0   
- 4475             0       0  ...       0       0       0       0       0   
- 4476             0       0  ...       0       0       0       0       0   
- 4477             0       0  ...       0       0       0       0       0   
- 4478             0       0  ...       0       0       0       0       0   
- 4479             0       0  ...       0       0       0       0       0   
- 4480             0       0  ...       0       0       0       0       0   
- 4481             0       0  ...       0       0       0       0       0   
- 4482             0       0  ...       0       0       0       0       0   
- 4483             0       0  ...       0       0       0       0       0   
- 4484             0       0  ...       0       0       0       0       0   
- 4485             0       0  ...       0       0       0       0       0   
- 4486             0       0  ...       0       0       0       0       0   
- 4487             0       0  ...       0       0       0       0       0   
- 
- article_id  1440.0  1441.0  1442.0  1443.0  1444.0  
- user_id                                             
- 1                0       0       0       0       0  
- 2                0       0       0       0       0  
- 3                0       0       0       0       0  
- 4                0       0       0       0       0  
- 5                0       0       0       0       0  
- 6                0       0       0       0       0  
- 7                0       0       0       0       0  
- 8                0       0       0       0       0  
- 9                0       0       0       0       0  
- 10               0       0       0       0       0  
- 11               0       0       0       0       0  
- 12               0       0       0       0       0  
- 13               0       0       0       0       0  
- 14               0       0       0       0       0  
- 15               0       0       0       0       0  
- 16               0       0       0       0       0  
- 17               0       0       0       0       0  
- 18               0       0       0       0       0  
- 19               0       0       0       0       0  
- 20               0       0       0       0       0  
- 21               0       0       0       0       0  
- 22               0       0       0       0       0  
- 23               0       0       0       0       0  
- 24               1       0       0       0       0  
- 25               0       0       0       0       0  
- 26               0       0       0       0       0  
- 27               0       0       0       0       0  
- 28               0       0       0       0       0  
- 29               0       0       0       0       0  
- 30               0       0       0       0       0  
- ...            ...     ...     ...     ...     ...  
- 4458             0       0       0       0       0  
- 4459             0       0       0       0       0  
- 4460             0       0       0       0       0  
- 4461             0       0       0       0       0  
- 4462             0       0       0       0       0  
- 4463             0       0       0       0       0  
- 4464             0       0       0       0       0  
- 4465             0       0       0       0       0  
- 4466             0       0       0       0       0  
- 4467             0       0       0       0       0  
- 4468             0       0       0       0       0  
- 4469             0       0       0       0       0  
- 4470             0       0       0       0       0  
- 4471             0       0       0       0       0  
- 4472             0       0       0       0       0  
- 4473             0       0       0       0       0  
- 4474             0       0       0       0       0  
- 4475             0       0       0       0       0  
- 4476             0       0       0       0       0  
- 4477             0       0       0       0       0  
- 4478             0       0       0       0       0  
- 4479             0       0       0       0       0  
- 4480             0       0       0       0       0  
- 4481             0       0       0       0       0  
- 4482             0       0       0       0       0  
- 4483             0       0       0       0       0  
- 4484             0       0       0       0       0  
- 4485             0       0       0       0       0  
- 4486             0       0       0       0       0  
- 4487             0       0       0       0       0  
- 
- [4487 rows x 714 columns],
- article_id  0.0     2.0     4.0     8.0     9.0     12.0    14.0    15.0    \
- user_id                                                                      
- 2917             0       0       0       0       0       0       0       0   
- 3024             0       0       0       0       0       1       0       0   
- 3093             0       0       0       0       0       0       0       0   
- 3193             0       0       0       0       0       0       0       0   
- 3527             0       0       0       0       0       0       0       0   
- 3532             0       0       0       0       0       1       0       0   
- 3684             0       0       0       0       0       0       0       0   
- 3740             0       0       0       0       0       1       0       0   
- 3777             0       0       0       0       0       0       0       0   
- 3801             0       0       0       0       0       1       0       0   
- 3968             0       0       0       0       0       0       0       0   
- 3989             0       0       0       0       0       0       0       0   
- 3990             0       0       0       0       0       0       0       0   
- 3998             0       0       0       0       0       0       0       0   
- 4002             0       0       0       0       0       0       0       0   
- 4204             0       0       0       0       0       0       0       0   
- 4231             0       0       0       0       0       0       0       0   
- 4274             0       0       0       0       0       0       0       0   
- 4293             0       0       0       0       0       0       0       0   
- 4487             0       0       0       0       0       0       0       0   
- 4488             0       0       0       0       0       0       0       0   
- 4489             0       0       0       0       0       0       1       0   
- 4490             0       0       0       0       0       0       0       0   
- 4491             0       0       0       0       0       0       0       0   
- 4492             0       0       0       0       0       0       0       0   
- 4493             0       0       0       0       0       0       0       0   
- 4494             0       0       0       0       0       0       0       0   
- 4495             0       0       0       0       0       0       0       0   
- 4496             0       0       0       0       0       0       0       0   
- 4497             0       0       0       0       0       0       0       0   
- ...            ...     ...     ...     ...     ...     ...     ...     ...   
- 5120             0       0       0       0       0       0       0       0   
- 5121             0       0       0       0       0       0       0       0   
- 5122             0       0       0       1       0       0       0       0   
- 5123             0       0       0       0       0       0       0       0   
- 5124             0       0       0       0       0       0       0       0   
- 5125             0       0       0       0       0       0       0       0   
- 5126             0       0       0       0       0       0       0       0   
- 5127             0       0       0       0       0       0       0       0   
- 5128             0       0       0       0       0       0       0       0   
- 5129             0       0       0       0       0       0       0       0   
- 5130             0       0       0       0       0       0       0       0   
- 5131             0       0       0       0       0       0       0       0   
- 5132             0       0       0       0       0       0       0       0   
- 5133             0       0       0       0       0       0       0       0   
- 5134             0       0       0       0       0       0       0       0   
- 5135             0       0       0       0       0       0       0       0   
- 5136             0       0       0       0       0       0       0       0   
- 5137             0       0       0       0       0       0       0       0   
- 5138             0       0       0       0       0       1       1       0   
- 5139             0       0       0       0       0       0       0       1   
- 5140             0       1       0       0       0       1       0       0   
- 5141             0       0       0       0       0       0       0       0   
- 5142             0       0       0       0       0       0       1       0   
- 5143             0       0       0       0       0       0       0       0   
- 5144             0       0       0       0       0       0       0       0   
- 5145             0       0       0       0       0       0       0       0   
- 5146             0       0       0       0       0       0       0       0   
- 5147             0       0       0       0       0       0       0       0   
- 5148             0       0       0       0       0       0       0       0   
- 5149             0       0       0       0       0       0       0       0   
- 
- article_id  16.0    18.0    ...  1432.0  1433.0  1434.0  1435.0  1436.0  \
- user_id                     ...                                           
- 2917             0       0  ...       0       0       0       0       0   
- 3024             0       0  ...       0       0       0       0       0   
- 3093             0       0  ...       0       0       0       0       1   
- 3193             0       0  ...       0       0       0       0       0   
- 3527             0       0  ...       0       0       0       0       0   
- 3532             0       0  ...       0       0       0       0       1   
- 3684             0       0  ...       0       0       0       0       0   
- 3740             0       0  ...       0       0       0       0       1   
- 3777             0       0  ...       0       0       0       0       0   
- 3801             0       0  ...       0       0       0       0       0   
- 3968             0       0  ...       0       0       0       0       0   
- 3989             0       0  ...       0       0       0       0       0   
- 3990             0       0  ...       0       0       0       0       0   
- 3998             0       0  ...       0       0       0       0       0   
- 4002             0       0  ...       0       0       0       0       0   
- 4204             0       0  ...       0       0       0       0       0   
- 4231             0       0  ...       0       0       0       0       1   
- 4274             0       0  ...       0       0       0       0       0   
- 4293             0       0  ...       0       0       0       0       1   
- 4487             0       0  ...       0       0       0       0       0   
- 4488             0       0  ...       0       0       0       0       0   
- 4489             0       0  ...       0       0       0       0       0   
- 4490             0       0  ...       0       0       0       0       0   
- 4491             1       0  ...       0       0       0       0       0   
- 4492             0       0  ...       0       1       0       0       0   
- 4493             0       0  ...       0       0       0       0       0   
- 4494             0       0  ...       1       0       0       0       0   
- 4495             0       0  ...       0       0       0       0       0   
- 4496             0       0  ...       0       0       0       0       0   
- 4497             0       0  ...       0       0       0       0       1   
- ...            ...     ...  ...     ...     ...     ...     ...     ...   
- 5120             0       0  ...       0       0       0       0       0   
- 5121             0       0  ...       0       0       0       0       0   
- 5122             0       0  ...       0       0       0       0       0   
- 5123             0       0  ...       0       1       0       0       1   
- 5124             0       0  ...       0       0       0       0       0   
- 5125             0       0  ...       0       0       0       0       0   
- 5126             0       0  ...       0       0       0       0       0   
- 5127             0       0  ...       0       0       1       0       0   
- 5128             0       0  ...       0       0       0       0       0   
- 5129             0       0  ...       0       0       0       0       0   
- 5130             0       0  ...       0       0       0       0       0   
- 5131             0       0  ...       0       0       0       0       0   
- 5132             0       0  ...       0       0       0       0       0   
- 5133             0       0  ...       0       0       0       0       0   
- 5134             0       0  ...       0       0       0       0       0   
- 5135             0       0  ...       0       0       0       0       0   
- 5136             0       0  ...       0       0       0       0       0   
- 5137             0       0  ...       0       0       0       0       0   
- 5138             0       0  ...       1       0       0       0       0   
- 5139             0       0  ...       0       0       0       0       0   
- 5140             0       0  ...       0       0       0       0       0   
- 5141             0       0  ...       0       0       0       0       0   
- 5142             0       0  ...       0       0       0       0       0   
- 5143             0       0  ...       0       0       0       0       1   
- 5144             0       0  ...       0       0       0       0       0   
- 5145             0       0  ...       0       0       0       0       0   
- 5146             0       0  ...       0       0       0       0       0   
- 5147             0       0  ...       0       0       0       0       0   
- 5148             0       0  ...       0       0       0       0       0   
- 5149             1       0  ...       0       0       0       0       0   
- 
- article_id  1437.0  1439.0  1440.0  1441.0  1443.0  
- user_id                                             
- 2917             0       0       0       0       0  
- 3024             0       0       0       0       0  
- 3093             0       0       0       0       0  
- 3193             0       0       0       0       0  
- 3527             0       0       0       0       0  
- 3532             0       0       0       0       0  
- 3684             0       0       0       0       0  
- 3740             0       0       0       0       0  
- 3777             0       0       0       0       0  
- 3801             0       0       0       0       0  
- 3968             0       0       0       0       0  
- 3989             0       0       0       0       0  
- 3990             0       0       0       0       0  
- 3998             0       0       0       0       0  
- 4002             0       0       0       0       0  
- 4204             0       0       0       0       0  
- 4231             0       0       0       0       0  
- 4274             0       0       0       0       0  
- 4293             0       0       0       0       0  
- 4487             0       0       0       0       0  
- 4488             0       0       0       0       0  
- 4489             0       0       0       0       0  
- 4490             0       0       0       0       0  
- 4491             0       0       0       0       0  
- 4492             0       0       0       0       0  
- 4493             0       0       0       0       0  
- 4494             0       0       0       0       0  
- 4495             0       0       0       0       0  
- 4496             0       0       0       0       0  
- 4497             0       0       0       0       0  
- ...            ...     ...     ...     ...     ...  
- 5120             0       0       0       0       0  
- 5121             0       0       0       0       0  
- 5122             0       0       0       0       0  
- 5123             1       0       0       0       0  
- 5124             0       0       0       0       0  
- 5125             0       0       0       0       0  
- 5126             0       0       0       0       0  
- 5127             0       0       0       0       0  
- 5128             0       0       0       0       0  
- 5129             0       0       0       0       0  
- 5130             0       0       0       0       0  
- 5131             0       0       0       0       0  
- 5132             0       0       0       0       0  
- 5133             0       0       0       0       0  
- 5134             0       0       0       0       0  
- 5135             0       0       0       0       0  
- 5136             0       0       0       0       0  
- 5137             0       0       0       0       0  
- 5138             0       0       0       0       0  
- 5139             0       0       0       0       0  
- 5140             0       0       0       0       0  
- 5141             0       0       0       0       0  
- 5142             0       0       0       0       0  
- 5143             0       0       0       0       0  
- 5144             0       0       0       0       0  
- 5145             0       0       0       0       0  
- 5146             0       0       0       0       0  
- 5147             0       0       0       0       0  
- 5148             0       0       0       0       0  
- 5149             0       0       0       0       0  
- 
- [682 rows x 574 columns],
- [4487,
-  4488,
-  4489,
-  4490,
-  4491,
-  4492,
-  4493,
-  4494,
-  4495,
-  4496,
-  4497,
-  4498,
-  4499,
-  4500,
-  4501,
-  4502,
-  4503,
-  4504,
-  4505,
-  4506,
-  4507,
-  4508,
-  4509,
-  4510,
-  4511,
-  4512,
-  4513,
-  4514,
-  4515,
-  4516,
-  4517,
-  4518,
-  4519,
-  4520,
-  4521,
-  4522,
-  4523,
-  4524,
-  4525,
-  4526,
-  4527,
-  4528,
-  4529,
-  4530,
-  4531,
-  4532,
-  4533,
-  4534,
-  4535,
-  4536,
-  4537,
-  4538,
-  4539,
-  4540,
-  4541,
-  4542,
-  4543,
-  4544,
-  4545,
-  4546,
-  4547,
-  4548,
-  4549,
-  4550,
-  4551,
-  4552,
-  4553,
-  4554,
-  4555,
-  4556,
-  4557,
-  4558,
-  4559,
-  4560,
-  4561,
-  4562,
-  4563,
-  4564,
-  4565,
-  4566,
-  4567,
-  4568,
-  4569,
-  4570,
-  4571,
-  4572,
-  4573,
-  4574,
-  3527,
-  4575,
-  4576,
-  4577,
-  4578,
-  4579,
-  4580,
-  4581,
-  4582,
-  4583,
-  4584,
-  4585,
-  4586,
-  4587,
-  4588,
-  4589,
-  4590,
-  4591,
-  4592,
-  4593,
-  4594,
-  4595,
-  4596,
-  4597,
-  4598,
-  4599,
-  4600,
-  4601,
-  4602,
-  4603,
-  4604,
-  4605,
-  4606,
-  4607,
-  4608,
-  4609,
-  4610,
-  4611,
-  4612,
-  4204,
-  4613,
-  4614,
-  4615,
-  4616,
-  4617,
-  4618,
-  4619,
-  4620,
-  4621,
-  4622,
-  4623,
-  4624,
-  4625,
-  4626,
-  4627,
-  4628,
-  4629,
-  4630,
-  4631,
-  4632,
-  4633,
-  4634,
-  4635,
-  4636,
-  4637,
-  4638,
-  4639,
-  4640,
-  4641,
-  4642,
-  4643,
-  4644,
-  4645,
-  4646,
-  4647,
-  4648,
-  4649,
-  4650,
-  4651,
-  4652,
-  4653,
-  4654,
-  4655,
-  4656,
-  4657,
-  4658,
-  4659,
-  4660,
-  4661,
-  4662,
-  4663,
-  4664,
-  4665,
-  4666,
-  4667,
-  4668,
-  4669,
-  4670,
-  4671,
-  4672,
-  4673,
-  4674,
-  4675,
-  4676,
-  4677,
-  4678,
-  4679,
-  4680,
-  4681,
-  4682,
-  4683,
-  4684,
-  4685,
-  4686,
-  4687,
-  4688,
-  4689,
-  4690,
-  4691,
-  4692,
-  4693,
-  4694,
-  4695,
-  4696,
-  4697,
-  4698,
-  4699,
-  4700,
-  3998,
-  4701,
-  4702,
-  4703,
-  4704,
-  4705,
-  4706,
-  4707,
-  4708,
-  4709,
-  4710,
-  4711,
-  4712,
-  4713,
-  4714,
-  4715,
-  4716,
-  4717,
-  4718,
-  4719,
-  4720,
-  4721,
-  4722,
-  4723,
-  4724,
-  4725,
-  4726,
-  4727,
-  4728,
-  4729,
-  4730,
-  4731,
-  4732,
-  4733,
-  4734,
-  4735,
-  4736,
-  4737,
-  4738,
-  4739,
-  4740,
-  4741,
-  4742,
-  4743,
-  4744,
-  4745,
-  4746,
-  4747,
-  4748,
-  4749,
-  4750,
-  4751,
-  4752,
-  4753,
-  4754,
-  4755,
-  4756,
-  4757,
-  4758,
-  4759,
-  4760,
-  4761,
-  4762,
-  4763,
-  4764,
-  4765,
-  4766,
-  4767,
-  4768,
-  4769,
-  4770,
-  4771,
-  4772,
-  4773,
-  4774,
-  4775,
-  4776,
-  4777,
-  4778,
-  4779,
-  4780,
-  4781,
-  4782,
-  4783,
-  4784,
-  4785,
-  4786,
-  4787,
-  4788,
-  4789,
-  4790,
-  4791,
-  4792,
-  4793,
-  4794,
-  4795,
-  3801,
-  4796,
-  4797,
-  4798,
-  4799,
-  4800,
-  4801,
-  4802,
-  4803,
-  3024,
-  4804,
-  4805,
-  4806,
-  4807,
-  4808,
-  3990,
-  4809,
-  4810,
-  4811,
-  4812,
-  4813,
-  4814,
-  4815,
-  4816,
-  2917,
-  3532,
-  4817,
-  4818,
-  4819,
-  4820,
-  4821,
-  4822,
-  4823,
-  4824,
-  4825,
-  4826,
-  4827,
-  4828,
-  4829,
-  4830,
-  4831,
-  4832,
-  4833,
-  4834,
-  4835,
-  4836,
-  4837,
-  4838,
-  4839,
-  4840,
-  4841,
-  4842,
-  4843,
-  4844,
-  4845,
-  4846,
-  4847,
-  4848,
-  4849,
-  4850,
-  4851,
-  4852,
-  4853,
-  4854,
-  4855,
-  4856,
-  4857,
-  4858,
-  4859,
-  4860,
-  4861,
-  4862,
-  4863,
-  4864,
-  4865,
-  4866,
-  4867,
-  4868,
-  4869,
-  4870,
-  4871,
-  4872,
-  4873,
-  4874,
-  4875,
-  4876,
-  4877,
-  4878,
-  4879,
-  4880,
-  4881,
-  4231,
-  4882,
-  4883,
-  4884,
-  4885,
-  4886,
-  4887,
-  4888,
-  4889,
-  4890,
-  4891,
-  4892,
-  4893,
-  4894,
-  4895,
-  4896,
-  4897,
-  4898,
-  4899,
-  4900,
-  4901,
-  4902,
-  4903,
-  4904,
-  4905,
-  4906,
-  3093,
-  4907,
-  4908,
-  4909,
-  4910,
-  4911,
-  4912,
-  4913,
-  3740,
-  4914,
-  4915,
-  4916,
-  4917,
-  4918,
-  4919,
-  4920,
-  4921,
-  4922,
-  4923,
-  4924,
-  4925,
-  4926,
-  4927,
-  4928,
-  4929,
-  4930,
-  4931,
-  4932,
-  4933,
-  4934,
-  4935,
-  4936,
-  4937,
-  4938,
-  3989,
-  4939,
-  4002,
-  3684,
-  4940,
-  4941,
-  4942,
-  4943,
-  4944,
-  4945,
-  4946,
-  4947,
-  4948,
-  4949,
-  4950,
-  4951,
-  4952,
-  4953,
-  4954,
-  4955,
-  4956,
-  4957,
-  4958,
-  4959,
-  4960,
-  4961,
-  4962,
-  4963,
-  4964,
-  4965,
-  4966,
-  4967,
-  4968,
-  4969,
-  4970,
-  4971,
-  4972,
-  4973,
-  4974,
-  4975,
-  4976,
-  3777,
-  4977,
-  4978,
-  4979,
-  4980,
-  4981,
-  4982,
-  4983,
-  4984,
-  4985,
-  4986,
-  4987,
-  4988,
-  4989,
-  4990,
-  4991,
-  4992,
-  4993,
-  3193,
-  4994,
-  4995,
-  4996,
-  4997,
-  4998,
-  4999,
-  5000,
-  5001,
-  5002,
-  5003,
-  5004,
-  5005,
-  5006,
-  5007,
-  4274,
-  5008,
-  5009,
-  5010,
-  5011,
-  5012,
-  5013,
-  5014,
-  5015,
-  5016,
-  5017,
-  5018,
-  5019,
-  5020,
-  5021,
-  5022,
-  5023,
-  5024,
-  5025,
-  5026,
-  5027,
-  5028,
-  5029,
-  5030,
-  5031,
-  5032,
-  5033,
-  5034,
-  5035,
-  5036,
-  5037,
-  5038,
-  5039,
-  5040,
-  5041,
-  5042,
-  5043,
-  5044,
-  5045,
-  5046,
-  5047,
-  5048,
-  5049,
-  5050,
-  5051,
-  5052,
-  5053,
-  5054,
-  5055,
-  5056,
-  5057,
-  5058,
-  5059,
-  5060,
-  5061,
-  5062,
-  5063,
-  5064,
-  5065,
-  5066,
-  5067,
-  5068,
-  5069,
-  5070,
-  5071,
-  5072,
-  3968,
-  5073,
-  5074,
-  5075,
-  5076,
-  5077,
-  5078,
-  5079,
-  5080,
-  5081,
-  5082,
-  5083,
-  5084,
-  5085,
-  5086,
-  5087,
-  5088,
-  5089,
-  5090,
-  5091,
-  5092,
-  5093,
-  5094,
-  5095,
-  5096,
-  5097,
-  5098,
-  5099,
-  5100,
-  5101,
-  5102,
-  5103,
-  5104,
-  5105,
-  5106,
-  5107,
-  5108,
-  5109,
-  5110,
-  5111,
-  5112,
-  5113,
-  5114,
-  5115,
-  5116,
-  5117,
-  5118,
-  5119,
-  5120,
-  5121,
-  5122,
-  5123,
-  5124,
-  5125,
-  5126,
-  5127,
-  5128,
-  5129,
-  5130,
-  5131,
-  5132,
-  5133,
-  5134,
-  5135,
-  5136,
-  5137,
-  5138,
-  4293,
-  5139,
-  5140,
-  5141,
-  5142,
-  5143,
-  5144,
-  5145,
-  5146,
-  5147,
-  5148,
-  5149],
- [1053.0,
-  1314.0,
-  1424.0,
-  1176.0,
-  58.0,
-  14.0,
-  33.0,
-  103.0,
-  1163.0,
-  485.0,
-  109.0,
-  681.0,
-  125.0,
-  1368.0,
-  16.0,
-  28.0,
-  1364.0,
-  933.0,
-  268.0,
-  26.0,
-  477.0,
-  29.0,
-  213.0,
-  1050.0,
-  1433.0,
-  880.0,
-  559.0,
-  911.0,
-  153.0,
-  1274.0,
-  651.0,
-  1304.0,
-  1366.0,
-  693.0,
-  376.0,
-  647.0,
-  283.0,
-  658.0,
-  1329.0,
-  448.0,
-  124.0,
-  919.0,
-  1338.0,
-  732.0,
-  92.0,
-  1432.0,
-  1273.0,
-  1160.0,
-  1351.0,
-  1431.0,
-  955.0,
-  1017.0,
-  260.0,
-  1180.0,
-  1185.0,
-  943.0,
-  812.0,
-  32.0,
-  1123.0,
-  40.0,
-  390.0,
-  329.0,
-  1125.0,
-  1124.0,
-  43.0,
-  409.0,
-  68.0,
-  495.0,
-  1406.0,
-  1408.0,
-  1405.0,
-  981.0,
-  1412.0,
-  865.0,
-  1429.0,
-  415.0,
-  221.0,
-  108.0,
-  1324.0,
-  1436.0,
-  1420.0,
-  1377.0,
-  1330.0,
-  617.0,
-  1181.0,
-  844.0,
-  1378.0,
-  162.0,
-  379.0,
-  1391.0,
-  50.0,
-  510.0,
-  609.0,
-  65.0,
-  1150.0,
-  1393.0,
-  1430.0,
-  1293.0,
-  486.0,
-  993.0,
-  684.0,
-  881.0,
-  1276.0,
-  1400.0,
-  695.0,
-  1059.0,
-  678.0,
-  930.0,
-  1427.0,
-  1025.0,
-  1166.0,
-  232.0,
-  205.0,
-  151.0,
-  1394.0,
-  116.0,
-  1305.0,
-  768.0,
-  1336.0,
-  1386.0,
-  542.0,
-  62.0,
-  1170.0,
-  1165.0,
-  60.0,
-  1396.0,
-  1343.0,
-  1360.0,
-  1350.0,
-  1162.0,
-  1332.0,
-  1296.0,
-  473.0,
-  9.0,
-  250.0,
-  241.0,
-  323.0,
-  1423.0,
-  278.0,
-  809.0,
-  898.0,
-  939.0,
-  1271.0,
-  482.0,
-  673.0,
-  1172.0,
-  1198.0,
-  237.0,
-  1171.0,
-  1398.0,
-  607.0,
-  1174.0,
-  1000.0,
-  1052.0,
-  1320.0,
-  316.0,
-  1328.0,
-  111.0,
-  1354.0,
-  788.0,
-  181.0,
-  1422.0,
-  975.0,
-  723.0,
-  254.0,
-  236.0,
-  1313.0,
-  751.0,
-  362.0,
-  225.0,
-  64.0,
-  244.0,
-  8.0,
-  1054.0,
-  273.0,
-  98.0,
-  821.0,
-  871.0,
-  1056.0,
-  240.0,
-  1356.0,
-  593.0,
-  311.0,
-  426.0,
-  528.0,
-  905.0,
-  18.0,
-  291.0,
-  1169.0,
-  1306.0,
-  349.0,
-  566.0,
-  253.0,
-  115.0,
-  669.0,
-  494.0,
-  183.0,
-  134.0,
-  1018.0,
-  193.0,
-  1183.0,
-  996.0,
-  1317.0,
-  202.0,
-  288.0,
-  1299.0,
-  958.0,
-  373.0,
-  464.0,
-  645.0,
-  969.0,
-  878.0,
-  194.0,
-  1047.0,
-  1048.0,
-  76.0,
-  730.0,
-  223.0,
-  665.0,
-  641.0,
-  843.0,
-  1279.0,
-  1278.0,
-  1175.0,
-  384.0,
-  164.0,
-  1286.0,
-  57.0,
-  1289.0,
-  793.0,
-  1402.0,
-  189.0,
-  81.0,
-  682.0,
-  20.0,
-  1014.0,
-  2.0,
-  107.0,
-  350.0,
-  369.0,
-  744.0,
-  951.0,
-  1225.0,
-  1192.0,
-  1285.0,
-  1440.0,
-  1441.0,
-  1358.0,
-  1319.0,
-  1179.0,
-  1290.0,
-  1307.0,
-  1434.0,
-  1184.0,
-  298.0,
-  525.0,
-  463.0,
-  122.0,
-  299.0,
-  1173.0,
-  1416.0,
-  15.0,
-  524.0,
-  313.0,
-  761.0,
-  766.0,
-  297.0,
-  1057.0,
-  569.0,
-  833.0,
-  74.0,
-  0.0,
-  1365.0,
-  1397.0,
-  1361.0,
-  234.0,
-  54.0,
-  465.0,
-  468.0,
-  1079.0,
-  705.0,
-  173.0,
-  356.0,
-  1418.0,
-  749.0,
-  310.0,
-  1387.0,
-  968.0,
-  1186.0,
-  891.0,
-  1298.0,
-  146.0,
-  101.0,
-  926.0,
-  727.0,
-  1437.0,
-  1318.0,
-  740.0,
-  759.0,
-  176.0,
-  184.0,
-  138.0,
-  80.0,
-  39.0,
-  346.0,
-  314.0,
-  1028.0,
-  1395.0,
-  1282.0,
-  120.0,
-  191.0,
-  864.0,
-  1016.0,
-  600.0,
-  729.0,
-  100.0,
-  130.0,
-  1051.0,
-  1435.0,
-  239.0,
-  680.0,
-  12.0,
-  444.0,
-  1044.0,
-  315.0,
-  462.0,
-  411.0,
-  547.0,
-  795.0,
-  36.0,
-  210.0,
-  967.0,
-  1189.0,
-  1055.0,
-  910.0,
-  215.0,
-  990.0,
-  1157.0,
-  1164.0,
-  136.0,
-  230.0,
-  359.0,
-  1357.0,
-  1153.0,
-  395.0,
-  131.0,
-  102.0,
-  51.0,
-  112.0,
-  1428.0,
-  1410.0,
-  48.0,
-  784.0,
-  152.0,
-  157.0,
-  1367.0,
-  1359.0,
-  1190.0,
-  1426.0,
-  631.0,
-  1425.0,
-  277.0,
-  1321.0,
-  1178.0,
-  606.0,
-  53.0,
-  735.0,
-  1419.0,
-  957.0,
-  251.0,
-  1120.0,
-  1158.0,
-  1403.0,
-  1060.0,
-  965.0,
-  764.0,
-  158.0,
-  564.0,
-  110.0,
-  263.0,
-  585.0,
-  59.0,
-  1277.0,
-  846.0,
-  34.0,
-  295.0,
-  143.0,
-  77.0,
-  480.0,
-  381.0,
-  382.0,
-  720.0,
-  667.0,
-  87.0,
-  353.0,
-  515.0,
-  1140.0,
-  1155.0,
-  1326.0,
-  1333.0,
-  1349.0,
-  1315.0,
-  399.0,
-  962.0,
-  78.0,
-  224.0,
-  256.0,
-  284.0,
-  692.0,
-  1263.0,
-  1137.0,
-  1006.0,
-  1154.0,
-  25.0,
-  89.0,
-  1232.0,
-  422.0,
-  882.0,
-  725.0,
-  1404.0,
-  1409.0,
-  258.0,
-  618.0,
-  599.0,
-  522.0,
-  825.0,
-  853.0,
-  1042.0,
-  420.0,
-  949.0,
-  1177.0,
-  96.0,
-  1267.0,
-  1411.0,
-  1407.0,
-  884.0,
-  986.0,
-  1142.0,
-  1145.0,
-  1139.0,
-  1151.0,
-  1143.0,
-  1152.0,
-  1144.0,
-  1147.0,
-  1141.0,
-  1146.0,
-  1149.0,
-  1148.0,
-  455.0,
-  132.0,
-  337.0,
-  142.0,
-  715.0,
-  1362.0,
-  1280.0,
-  997.0,
-  1071.0,
-  1070.0,
-  622.0,
-  1439.0,
-  1073.0,
-  188.0,
-  195.0,
-  252.0,
-  145.0,
-  1254.0,
-  813.0,
-  903.0,
-  1443.0,
-  655.0,
-  659.0,
-  491.0,
-  302.0,
-  383.0,
-  906.0,
-  1024.0,
-  858.0,
-  303.0,
-  1008.0,
-  973.0,
-  714.0,
-  117.0,
-  757.0,
-  1068.0,
-  1077.0,
-  1083.0,
-  1080.0,
-  1065.0,
-  1074.0,
-  959.0,
-  398.0,
-  1121.0,
-  634.0,
-  1159.0,
-  1292.0,
-  355.0,
-  763.0,
-  928.0,
-  82.0,
-  1331.0,
-  470.0,
-  876.0,
-  336.0,
-  861.0,
-  266.0,
-  1161.0,
-  1191.0,
-  347.0,
-  952.0,
-  936.0,
-  348.0,
-  1401.0,
-  389.0,
-  500.0,
-  656.0,
-  440.0,
-  616.0,
-  475.0,
-  412.0,
-  427.0,
-  553.0,
-  870.0,
-  941.0,
-  233.0,
-  1035.0,
-  977.0,
-  892.0,
-  1058.0,
-  701.0,
-  30.0,
-  1196.0,
-  1283.0,
-  722.0,
-  508.0,
-  1261.0,
-  270.0,
-  567.0,
-  855.0,
-  544.0,
-  932.0,
-  4.0,
-  404.0,
-  785.0,
-  352.0,
-  1337.0,
-  1297.0,
-  113.0,
-  563.0,
-  868.0,
-  351.0,
-  632.0,
-  1038.0,
-  935.0,
-  1030.0,
-  670.0,
-  324.0,
-  1219.0,
-  721.0,
-  521.0,
-  437.0,
-  1291.0,
-  708.0,
-  972.0,
-  862.0,
-  1187.0,
-  1415.0,
-  1414.0,
-  339.0,
-  857.0,
-  499.0,
-  460.0,
-  367.0,
-  588.0])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># How many articles can we make predictions for in the test set?</span>
@@ -17625,30 +16488,10 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[103]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>574</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[104]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># How many articles in the test set are we not able to make predictions for because of the cold </span>
@@ -17660,30 +16503,10 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[104]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>662</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># How many users can we make predictions for in the test set?</span>
@@ -17694,30 +16517,10 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[105]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>20</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[106]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># How many articles in the test set are we not able to make predictions for because of the cold start problem?</span>
@@ -17728,30 +16531,10 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[106]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>0</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[107]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Replace the values in the dictionary below</span>
@@ -17775,24 +16558,6 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Awesome job!  That&#39;s right!  All of the test movies are in the training data, but there are only 20 test users that were also in the training set.  All of the other users that are in the test set we have no data on.  Therefore, we cannot make predictions for these users using SVD.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -17805,7 +16570,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[115]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># fit SVD on the user_item_train matrix</span>
@@ -17819,7 +16584,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[116]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use these cells to see how well you can use the training </span>
@@ -17833,7 +16598,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[117]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">row_ids</span> <span class="o">=</span> <span class="n">user_item_train</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">test_idx</span><span class="p">)</span>
@@ -17849,7 +16614,7 @@ The top 10 recommendations for user 20 are the following article names:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[164]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_latent_feats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">700</span><span class="o">+</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
@@ -17888,28 +16653,6 @@ The top 10 recommendations for user 20 are the following article names:
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAY4AAAEWCAYAAABxMXBSAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADh0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uMy4xLjAsIGh0dHA6Ly9tYXRwbG90bGliLm9yZy+17YcXAAAgAElEQVR4nO3deZgU1dn38e9vNoZ92GQbECREBUTEEZcYxSVGjHE3ipqo0RCTaMxiIj5ZJTFqHrO5PCpR3BWJRiW+IhqVxMREGRRkE0FFGQHZZN9mud8/zpmhGRqmG6bpWe7PddXVVadOVd3V09N3V52qUzIznHPOuVTlZDsA55xzjYsnDuecc2nxxOGccy4tnjicc86lxROHc865tHjicM45lxZPHM7VI0n3S/p1lrYtSfdJ+lTSG9mIwTUPnjgaCUlT4hdCi2zH0phIWijpE0mtE8oulzQli2FlytHAF4BiMxtWe6akSyT9K92VShouqaw+Aozr+6Wkh+uos1DSJknrE4Yee7jdet2P5swTRyMgqQ/wecCA0/bytvP25vYyJA+4OttBpEtSbpqL7AssNLMNmYgnC75sZm0ShsXZDKaJ/C/UC08cjcPXgP8C9wMXJ86Q1FLS7yR9KGmNpH9JahnnHS3pNUmrJS2SdEksnyLp8oR1bPdLVJJJ+o6k+cD8WPanuI61kqZJ+nxC/VxJ/yPpPUnr4vxeku6Q9Lta8f5N0vdq76CkuyTdUqvsGUk/iOPXSvo4rn+epBPSeP/+F7hGUlGS7faJ+5uXUFbz/sT35t+S/hDfx/clHRXLF0laJuniWqvtLOnFGOs/JO2bsO4D4rxVcT++kjDvfkl3SnpO0gbguCTx9pA0MS6/QNI3YvllwD3AkfHX+fVpvD9IulTS3Bjz+5K+GctbA5OAHom//CXlSBod/+YrJU2Q1LHWe3qxpI8krZD0kzjvZOB/gPPiumakE2dcxxEJn+sZkobvwX5sd2pRtY5KFI58rpX0NrBBUl5c7klJyyV9IOm7CfWHSSqN/yefSPp9uvvXKJiZDw18ABYA3wYOBcqBrgnz7gCmAD2BXOAooAXQG1gHjATygU7AkLjMFODyhHVcAvwrYdqAF4GOQMtYdlFcRx7wQ2ApUBjn/QiYCewPCDg41h0GLAZyYr3OwMbE+BO2eQywCFCc7gBsAnrE9S4CesR5fYB+Kb53C4ETgb8Cv45llwNTEtZlQF7CMjXvT3xvKoBL4/v7a+Cj+L63AE6K73ObWP/+OH1MnP+n6vcWaB3349L4Pg4FVgADE5ZdA3yO8KOuMMn+/AP4P6AQGAIsB05I9ndMsuxO5wNfAvrFv9+x8e80NM4bDpTVqv89wo+Z4rifdwOP1XpP/wy0jJ+HLcCBcf4vgYdT+bslKe8JrAROie/RF+J0l93cj/urPxfJ6sQ4pgO94r7kANOAnwMFwH7A+8AXY/3/AF+N422AI7L9/ZGJIesB+FDHHyicty4HOsfpd4Dvx/EcwpfrwUmWuw54aifrnELdieP4OuL6tHq7wDzg9J3Umwt8IY5fCTy3k3oifCEfE6e/Abwcxz8DLCMkgPw037+FcblBhC/lLqSfOOYnzDso1k9M3ivZlpTvB8YnzGsDVMYvnvOAV2vFdzfwi4RlH9zFvvSK62qbUHYjcH+yv2OS5Xc5v1bdp4Gr4/hwdvzCnUtMWHG6e/yc5iW8p8UJ898Azo/jvyS1xLEeWB2Hp2P5tcBDtepOBi7ezf24n7oTx9cTpg8HPkryv3ZfHP8ncD3x/7WpDn6qquG7GHjBzFbE6UfZdrqqM+GX53tJluu1k/JULUqckPTDeApgjaTVQPu4/bq29QDhaIX4+lCyShb+68YTjpAALgAeifMWEH7h/hJYJmm80mwoNbNZwLPA6HSWiz5JGN8U11e7rE3CdM17Z2brgVWEI6d9gcPjKZbV8X28EOiWbNkkegCrzGxdQtmHhF/he0TSCEn/jafAVhN+0XfexSL7Ak8l7MdcQlLrmlBnacL4RrZ/j1JxhpkVxeGMhO2eW+s9PJqQuHZnP1KR+DfZl3C6K3H7/8O2/b4M+CzwjqSpkk7dw203SN7Y04AptFV8BciVVP1P2AIoknQw4fTQZsKhee1zxYsIp4qS2QC0SpjulqROTbfJCu0Z1wInALPNrErSp4SjhOpt9QNmJVnPw8CsGO+BhF+AO/MY8IKkmwi/7M6sCcbsUeBRSe0Iv9JvBr66i3Ul8wvgTSCx3aW6IbkVsDaOJ3s/0tGrekRSG8Ipv8WE9+kfZvaFXSy7q+6qFwMdJbVNSB69gY/3JFiFK/WeJLSlPWNm5ZKeZtvfN1lMiwi/xP+dZH196tjknnTJvYhwxPGNJNvdnf1I638hbv8DM+ufLDgzmw+MlJQDnAU8IamTNZ0LFgBvHG/oziD8ihtAOJ89hPDl+yrwNTOrAsYBv48NdrmSjoz/QI8AJ0r6SmzQ6yRpSFzvdOAsSa0kfYbwK2lX2hLO8y8H8iT9HGiXMP8e4FeS+isYLKkTgJmVAVMJRxpPmtmmnW3EzN6K27gHmGxmqwEk7S/p+Lhfmwm/8Cvrfvt2WP8C4HHguwllywlfvBfF9+/rhCS4J05RuDChAPgV8LqZLSIc8XxW0lcl5cfhMEkHphj/IuA14EZJhZIGE/52j6QRm+KyNQPhXH0LwntfIWkEoe2m2idAJ0ntE8ruAm5QbPiX1EXS6SnG8AnQJ365puth4MuSvhj/XoWxQbt4N/djOuHv1VFSN8KR7a68AayNDeYtYwyDJB0GIOkiSV3i/+bquEzan9WGzhNHw3Yx4dzpR2a2tHoAbgcuVLgS6BrCkcdUwimRmwmN0R8RDtN/GMunExopAf4AbCX8Iz1A3V88kwlXpLxLODWyme0P338PTABeIPxqv5fQkFjtAULbQNLTVLU8RmiTeDShrAVwE6EheSmwD+H0AJIulDQ7hfVWG0NopE70DUID/0pgIOHLeU88Sji6WUW4oOFCgHiUcBJwPuHoYSnh75XOvTkjCW0Ii4GnCO0jL6ax/FGExFt7+C7hb/gp4TThxOoFzOwdwt/l/Xh6pgeh0X8i4QhxHaGh/PAUY/hLfF0p6c00Yq9OnqcT/v7LCZ/DHxE+8+t2Yz8eIhytLyR8fh+vY/uVwJcJP+I+IHwm7yGcugU4GZgtaT3hPTrfzDans4+NQfUVLM5ljKRjCL8U+8RfYs65RsyPOFxGScon3Hx3jycN55oGTxwuY+K5+9WEK17+mOVwnHP1xE9VOeecS4sfcTjnnEtLs7iPo3PnztanT59sh+Gcc43KtGnTVphZl9rlzSJx9OnTh9LS0myH4ZxzjYqkD5OV+6kq55xzafHE4ZxzLi2eOJxzzqXFE4dzzrm0eOJwzjmXlowmDknjFB6tmay7bWJPqrcqPALzbUlDE+ZdLGl+HC5OKD9U0sy4zK2SlGzdzjnnMiPTRxz3E3qL3JkRQP84jALuBFB4dvEvCL1tDgN+IalDXObOWLd6uV2t3znnXD3L6H0cZvbPOh7qcjrhUZkG/FdSkaTuhMc3vmhmqwAkvQicLGkK0M7M/hPLHyQ8s2JSxnbCOZc2M6PKoLLKwmBGZWV8jWVVFocqqLIwL3G56nnVy1RVv1bZdmXVy1fFZWteq7YvI2GeEV6pnq4p3xZ/eA11zbZ/mlNiT02WMGdnPTgldu1UPWoJ09XrqD2vzhWn4OKj+tCpTTo999ct2zcA9mT75zqUxbJdlZclKd+BpFGEIxN69+5dfxE7lyVmxqbySjZurWTT1ko2bK2oGd9cXkl5ZRXllRZfq9haaZRXhPGKKmNrwnh1nYpKq1mmoiosXxHrVFSGL+fyqqrwGudVVlmcH+pVxvXVlMcyV79296T8aUN6NrnEkeytsN0o37HQbCwwFqCkpMQ/xS7jzIwtFVWs31LBxi3bvtg3V3/Zl1eyeWslG7dWsKm8ik3llWzaWhFfq9hUXsGmWG9TeVXCvG3L72mfpHk5Ii9X5OfkkJ+XQ16OyM/NIT9X5OVum87NUSjLyaFFfh55OSI3Z/t61XVyc0K9vByRm6uaurkK28qRyM0hlkFujsjJCfWkbfNzFKZzJXJEGM/ZNi83J86L204sk7bVqV42J25LxPnV8wivxGXEtvpCNd8yiqOqqRPns21+MonlO6uvmjLVTEvblzVk2U4cZSQ8nxkoJjzZrIxwuiqxfEosL05S37k9Ymas3VzB6o1bWbOpnLWbKli3uZx1mytYu7mctZu3TVe/bthayYYtFWzYUhGSxdbKtH9pF+bn0Kogj5b5ubQsyA2v+bkUtcyne7tCWhbkUpifS+uCXFoV5NKyII/WLUKdVgV5tIrlhfm55OfmUJBXnQhyyMsVBXE8P37Z5+Q0/C8l1/BlO3FMBK6UNJ7QEL7GzJZImgz8JqFB/CTgOjNbJWmdpCOA1wkPpb8tK5G7Bq28sopVG7ayfN0WVqzfwor1W1mxfgsr12/h043lrN64lU83lvPpxq2s2VjO6k3ldX7pt2mRR9vCMLRpkUf7lvn0aF9I6xZhunWL8GUexvNoXZCQDBK+4KsTRYu8HP8id41SRhOHpMcIRw6dJZURrpTKBzCzu4DnCM/FXgBsBC6N81ZJ+hXhOdoAY6obyoFvEa7WakloFPeG8WZmw5YKlqzZxMerN7N49SaWrA7jS9ZsqkkUn24sT7psYX4OHVsVUNSqgA6t8zmwWzuKWuXToVUBRa3yKWpVQFHL/Jgg8mnXMry2aZFHrn/JOwc0kwc5lZSUmPeO23is21zOolWbWPTpRhat2kjZp5so+3RjTaJYs2n7pJAj6NqukO7tC+nStgWd27SoeQ3jBTXjrVtk+yDbucZD0jQzK6ld7v9Fbq8zM5at28IHKzawcMUGFq4MCaI6UdQ+WmhdkEuvjq3oWdSSkn070KOoJT2KCuNrS7q2bUFerneC4Nze4onDZcy6zeW8+8l6PlixgQ9WrGfhio0hWazcwMatlTX18nNFcYdWFHdoyaCDutOrQyt6dWwZX1vRoVV+o7jSxLnmwhOH22PllVV8sGID7yxdx7yla3lnyTreWbqOj1dvqqmTmyOKO7Skb+fWDOvbkb6dW9cMPYpaevuBc42IJw6Xlk1bK5mzZA1vl61hZtka5i5dx3vL1rO1sgoICWK/zq05pHcRI4f1Yv9u7ejXpTXFHVpRkOenk5xrCjxxuJ3aWlHFvKXrmFG2mplla5hRtpr5y9bXXLbapW0LBnRvxzH9O7N/t7Yc0K0d/fZpTYu83CxH7pzLJE8crsamrZWUfriK195byX/eW8mcxWtrjiSKWuUzuLiIEw/syuDi9gwuLqJb+8IsR+ycywZPHM3Y1ooqZpSt5t8LVvDaeyt566NPKa808nLEkF5FXPq5PgwuLmJwcXuKO7T0BmrnHOCJo9n5aOVGJs9eyqsLVjD1g1VsKq9EgkE92vP1z/XlyH6dOKxPR7/fwTm3U/7t0AwsWLaOSTOXMmnWUuYsWQtA/33a8JWSYo7s15kj9+tE+1b5WY7SOddYeOJogsyMuUvW8fysJUyatZT5y9YDMLR3ET855UBOHtSNXh1bZTlK51xj5YmjCVmwbB1/ffNjnpu5hIUrN5IjGNa3IxcdMZAvDuzmjdnOuXrhiaORW7l+C3+bsZi/vvUxb5etITdHHNWvE6OO6cdJA7vSuZ4f4OKcc544GqEtFZW8PHcZT775MVPmLaOiyhjYox0/O3UApx3cgy5tPVk45zLHE0cjMrNsDY+XfsTfZixhzaZy9mnbgsuO7suZQ3tyQLd22Q7POddMeOJoBN74YBW3vTyfV+evoDA/hy8O7MZZQ4s5+jOdvY8n59xe54mjgTIz/r1gJbe+PJ83PlhF5zYFXDfiAC44vDdtC/3SWedc9njiaGDMjFfmLePWlxYwfdFqurUr5JdfHsD5w3pTmO99QDnnss8TRwNRVWVMnr2U215ewJwlaynu0JLfnHkQZx/a0zsNdM41KJ44GoBpH67ip0/PZu6StezXuTW3nHswpw/pQb4/1c451wBlNHFIOhn4E5AL3GNmN9Wavy8wDugCrAIuMrOyOO9m4Eux6q/M7PFYfj9wLLAmzrvEzKZncj8y5dMNW7n5+XcYP3UR3dsX8qfzh3Dq4B7e4O2ca9Ayljgk5QJ3AF8AyoCpkiaa2ZyEarcAD5rZA5KOB24EvirpS8BQYAjQAviHpElmtjYu9yMzeyJTsWeamfGXaWXcNOkd1mwqZ9Qx+3H1Cf29Y0HnXKOQyW+qYcACM3sfQNJ44HQgMXEMAL4fx18Bnk4o/4eZVQAVkmYAJwMTMhjvXjFv6Tp++vRMpi78lJJ9O/DrMwf5PRjOuUYlkyfRewKLEqbLYlmiGcDZcfxMoK2kTrF8hKRWkjoDxwG9Epa7QdLbkv4gKelt0pJGSSqVVLp8+fL62J89snFrBTc+N5cv3foqC5at57dnD2bCN4/0pOGca3QyecSR7ES91Zq+Brhd0iXAP4GPgQoze0HSYcBrwHLgP0BFXOY6YClQAIwFrgXG7LAhs7FxPiUlJbW3u1f9fc4n/PyZWSxes5nzSnoxesQBdGhdkM2QnHNut2UycZSx/VFCMbA4sYKZLQbOApDUBjjbzNbEeTcAN8R5jwLzY/mSuPgWSfcRkk+DtG5zOb96dg4TSss4oFtbbh15CCV9OmY7LOec2yOZTBxTgf6S+hKOJM4HLkisEE9DrTKzKsKRxLhYngsUmdlKSYOBwcALcV53M1ui8BzTM4BZGdyH3fbGB6v4wYTpLF69iSuP+wzfPaE/BXl+ea1zrvHLWOIwswpJVwKTCZfjjjOz2ZLGAKVmNhEYDtwoyQinqr4TF88HXo3PuF5LuEy3+lTVI5K6EE6FTQeuyNQ+7I4tFZX8/sV3GfvP9+ndsRV/ueJIDt3XjzKcc02HzLJ6+n+vKCkpsdLS0oxvZ+6StXz/8em8s3QdI4f15qdfOtAvsXXONVqSpplZSe1y/1arB5VVxj2vvs/vXniXdi3zGXdJCccf0DXbYTnnXEZ44thDi1Zt5IcTZvDGwlV8cWBXfnPmQXTyp+4555owTxx7YNGqjZxz12ts2FLJLecezNlDexLbZZxzrsnyxLGbVq7fwsXj3mDT1kqe/NZR7N+tbbZDcs65vcITx25Yv6WCS++fyuI1m3j4ssM9aTjnmhVPHGnaUlHJFQ9NY/bitfz5a4f6DX3OuWbH70hLQ2WV8cMJM/jXghXcfPZgv3LKOdcseeJIkZlx/d9m8+zbS/ifUw7gnEOLsx2Sc85lhSeOFN328gIe/M+HjDpmP0Yd0y/b4TjnXNZ44kjBw//9kN+/+C5nDe3J6JMPyHY4zjmXVZ446jBp5hJ+9swsjj9gH24+ezA5/lhX51wz54ljF157bwVXj5/O0N4duOOCoeTn+tvlnHP+TbgTZsbtLy+gT+dW3HtxCS0LcrMdknPONQh+H8dOSGLs10rYsKWColb+tD7nnKvmiWMX2rTIo413i+6cc9vxU1XOOefS4onDOedcWjxxOOecS4snDuecc2nJaOKQdLKkeZIWSBqdZP6+kl6S9LakKZKKE+bdLGlWHM5LKO8r6XVJ8yU9LskveXLOub0oY4lDUi5wBzACGACMlDSgVrVbgAfNbDAwBrgxLvslYCgwBDgc+JGkdnGZm4E/mFl/4FPgskztg3POuR1l8ohjGLDAzN43s63AeOD0WnUGAC/F8VcS5g8A/mFmFWa2AZgBnKzwXNbjgSdivQeAMzK4D84552rJZOLoCSxKmC6LZYlmAGfH8TOBtpI6xfIRklpJ6gwcB/QCOgGrzaxiF+sEQNIoSaWSSpcvX14vO+Sccy6ziSNZb4BWa/oa4FhJbwHHAh8DFWb2AvAc8BrwGPAfoCLFdYZCs7FmVmJmJV26dNnNXXDOOVdbJhNHGeEooVoxsDixgpktNrOzzOwQ4CexbE18vcHMhpjZFwgJYz6wAiiSlLezdTrnnMusTCaOqUD/eBVUAXA+MDGxgqTOkqpjuA4YF8tz4ykrJA0GBgMvmJkR2kLOictcDDyTwX1wzjlXS8YSR2yHuBKYDMwFJpjZbEljJJ0Wqw0H5kl6F+gK3BDL84FXJc0BxgIXJbRrXAv8QNICQpvHvZnaB+eccztS+BHftJWUlFhpaWm2w3DOuUZF0jQzK6ld7neOO+ecS4snDuecc2nxxOGccy4tnjicc86lxROHc865tHjicM45lxZPHM4559LiicM551xaPHE455xLiycO55xzafHE4ZxzLi2eOJxzzqXFE4dzzrm0eOJwzjmXFk8czjnn0uKJwznnXFo8cTjnnEtLnYlD0pWSOuyNYJxzzjV8qRxxdAOmSpog6WRJynRQzjnnGq46E4eZ/RToD9wLXALMl/QbSf3qWjYmmnmSFkganWT+vpJekvS2pCmSihPm/VbSbElzJd1anbBivXmSpsdhnzT21znn3B5KqY3DzAxYGocKoAPwhKTf7mwZSbnAHcAIYAAwUtKAWtVuAR40s8HAGODGuOxRwOeAwcAg4DDg2ITlLjSzIXFYlso+OOecqx95dVWQ9F3gYmAFcA/wIzMrl5QDzAd+vJNFhwELzOz9uJ7xwOnAnIQ6A4Dvx/FXgKfjuAGFQAEgIB/4JPXdcs41Z+Xl5ZSVlbF58+Zsh9IoFBYWUlxcTH5+fkr160wcQGfgLDP7MLHQzKoknbqL5XoCixKmy4DDa9WZAZwN/Ak4E2grqZOZ/UfSK8ASQuK43czmJix3n6RK4Eng1/GIaDuSRgGjAHr37p3CbjrnmoqysjLatm1Lnz598GbZXTMzVq5cSVlZGX379k1pmVROVT0HrKqekNRW0uFxg3N3ulT4wt8hxlrT1wDHSnqLcCrqY6BC0meAA4FiQgI6XtIxcZkLzewg4PNx+GqyjZvZWDMrMbOSLl261LWPzrkmZPPmzXTq1MmTRgok0alTp7SOzlJJHHcC6xOmN8SyupQBvRKmi4HFiRXMbLGZnWVmhwA/iWVrCEcf/zWz9Wa2HpgEHBHnfxxf1wGPEk6JOefcdjxppC7d9yqVxKHEU0FmVkVqp7imAv0l9ZVUAJwPTNxuxVLn2FYCcB0wLo5/RDgSyZOUTzgamRunO8dl84FTgVkpxOKcc3vFypUrGTJkCEOGDKFbt2707NmzZnrr1q0prePSSy9l3rx5u6xzxx138Mgjj9RHyGlLJQG8HxvIq48yvg28X9dCZlYh6UpgMpALjDOz2ZLGAKVmNhEYDtwoyYB/At+Jiz8BHA/MJJzeet7M/iapNTA5Jo1c4O/An1PbVeecy7xOnToxffp0AH75y1/Spk0brrnmmu3qmBlmRk5O8t/u9913X53b+c53vlNnnUxJ5YjjCuAoQvtDdQP3qFRWbmbPmdlnzayfmd0Qy34ekwZm9oSZ9Y91LjezLbG80sy+aWYHmtkAM/tBLN9gZoea2WAzG2hmV5tZZfq77Zxze9eCBQsYNGgQV1xxBUOHDmXJkiWMGjWKkpISBg4cyJgxY2rqHn300UyfPp2KigqKiooYPXo0Bx98MEceeSTLloU7EH7605/yxz/+sab+6NGjGTZsGPvvvz+vvfYaABs2bODss8/m4IMPZuTIkZSUlNQktT1R5xFHvE/i/D3eknPOZcH1f5vNnMVr63WdA3q04xdfHpj2cnPmzOG+++7jrrvuAuCmm26iY8eOVFRUcNxxx3HOOecwYMD2t7utWbOGY489lptuuokf/OAHjBs3jtGjd7ifGjPjjTfeYOLEiYwZM4bnn3+e2267jW7duvHkk08yY8YMhg4duns7XEsq93EUApcBAwn3VlQH+fV6icA555qJfv36cdhhh9VMP/bYY9x7771UVFSwePFi5syZs0PiaNmyJSNGjADg0EMP5dVXX0267rPOOqumzsKFCwH417/+xbXXXgvAwQcfzMCB6Se7ZFJp43gIeAf4IuHu7guBXV2G65xzDcbuHBlkSuvWrWvG58+fz5/+9CfeeOMNioqKuOiii5JeEltQUFAznpubS0VFRdJ1t2jRYoc6SW5xqxeptHF8xsx+BmwwsweALwEHZSQa55xrJtauXUvbtm1p164dS5YsYfLkyfW+jaOPPpoJEyYAMHPmTObMmVPHEqlJ5YijPL6uljSI0F9Vn3rZunPONVNDhw5lwIABDBo0iP3224/Pfe5z9b6Nq666iq997WsMHjyYoUOHMmjQINq3b7/H61VdhzKSLid07XEQcD/QBviZmd29x1vfS0pKSqy0tDTbYTjn9pK5c+dy4IEHZjuMrKuoqKCiooLCwkLmz5/PSSedxPz588nL2/GYIdl7JmmamZXUrrvLI454c95aM/uUcJ/Ffnu0F8455/aa9evXc8IJJ1BRUYGZcffddydNGuna5RpiR4ZXAhP2eEvOOef2qqKiIqZNm1bv602lcfxFSddI6iWpY/VQ75E455xrFFI5Zqm+XyPx/nbDT1s551yzlMqd46l10O6cc65ZSOXO8a8lKzezB+s/HOeccw1dKm0chyUMnwd+CZyWwZicc67Rqo9u1QHGjRvH0qVLa6ZT6Wp9b0nlVNVVidOS2hO6IXHOOVdLKt2qp2LcuHEMHTqUbt26Aal1tb63pHLEUdtGoH99B+Kcc03dAw88wLBhwxgyZAjf/va3qaqqoqKigq9+9ascdNBBDBo0iFtvvZXHH3+c6dOnc95559UcqaTS1fr8+fM5/PDDGTZsGD/72c8oKirKyH6k0sbxN7Y9KzwHGIDf1+GcaywmjYalM+t3nd0OghE3pbXIrFmzeOqpp3jttdfIy8tj1KhRjB8/nn79+rFixQpmzgwxrl69mqKiIm677TZuv/12hgwZssO6dtbV+lVXXcU111zDueeey+23314vu5pMKpfj3pIwXgF8aGZlGYrHOeeapL///e9MnTqVkpLQg8emTZvo1asXX/ziF5k3bx5XX301p5xyCieddFKd69pZV+uvv/46zz33HAAXXHABP/3pTzOyL6kkjo+AJWa2GUBSS0l9zGxhRiJyzrn6lOaRQaaYGV//+tf51a9+tcO8t99+m0mTJnHrrbfy5JNPMoKB36EAABuJSURBVHbs2F2uK9Wu1jMllTaOvwBVCdOVsaxOkk6WNE/SAkk7PLJK0r6SXpL0tqQpkooT5v1W0mxJcyXdKkmx/FBJM+M6a8qdc64hO/HEE5kwYQIrVqwAwtVXH330EcuXL8fMOPfcc7n++ut58803AWjbti3r1q1LaxvDhg3jqaeeAmD8+PH1uwMJUkkceWZWcw1ZHC/YRX0AJOUCdwAjCO0iIyUNqFXtFuBBMxtMeEjUjXHZo4DPAYOBQYRLgY+Ny9xJeOZ5/zicnMI+OOdcVh100EH84he/4MQTT2Tw4MGcdNJJfPLJJyxatIhjjjmGIUOG8I1vfIPf/OY3QLj89vLLL0/rMt5bb72Vm2++mWHDhrFs2bJ66UI9KTPb5QC8CJyWMH068FIKyx0JTE6Yvg64rlad2UBxHBehJ97qZacBLYFWQClwINAdeCdh+ZHA3XXFcuihh5pzrvmYM2dOtkPIivXr11tVVZWZmT300EN21llnpbxssvcMKLUk36mptHFcATwiqbqJvgxIejd5LT2BRQnTZcDhterMAM4G/gScCbSV1MnM/iPpFWBJTCi3m9lcSSVxPYnr7Jls45JGEY5M6N27dwrhOudc4zZ16lS+973vUVVVRYcOHTJ270cqNwC+BxwhqQ3hwU+pnnRL1vZQ+6lR1wC3S7qE8LyPj4EKSZ8hHGFUt3m8KOkYYFMK66yOeywwFsKDnFKM2TnnGq3hw4fX3HyYSXW2cUj6jaQiM1tvZuskdZD06xTWXQb0SpguBhYnVjCzxWZ2lpkdAvwklq0hHH38N25zPTAJOCKus3hX63TOOZdZqTSOjzCz1dUTFp4GeEoKy00F+kvqK6kAOB+YmFhBUuf4lEEIbSDj4vhHwLGS8iTlExrG55rZEmCdpCPi1VRfA55JIRbnXDNjdTwW222T7nuVSuLIldSiekJSS6DFLupXB1IBXAlMBuYCE8xstqQxkqo7SRwOzJP0LtAVuCGWPwG8B8wktIPMMLO/xXnfAu4BFsQ6k1LYB+dcM1JYWMjKlSs9eaTAzFi5ciWFhYUpL6O63lhJPyb0hlvdynIpMNHMfru7ge5tJSUlVlpamu0wnHN7SXl5OWVlZWzevDnboTQKhYWFFBcXk5+fv125pGlmVlK7fiqN47+V9DZwIqHB+3lg33qK1znn6l1+fj59+/oz6DIl1d5xlxLuHj8bOIFw6sk551wztNMjDkmfJTRojwRWAo8TTm0dt5diy76lM2HjSthveLYjcc65BmNXRxzvEI4uvmxmR5vZbYR+qpoHM3juxzD+Iljydrajcc65BmNXieNswimqVyT9WdIJJL+pr2mS4Jx7obAdPHIurF5U9zLOOdcM7DRxmNlTZnYecAAwBfg+0FXSnZLq7jC+KWjXAy58Aso3heSxaXXdyzjnXBNXZ+O4mW0ws0fM7FTCndrTgR26SG+yug6A8x+GlQvg8YugYku2I3LOuaxK65njZrbKzO42s+MzFVCD1PcYOONOWPgqPP1tqKqqexnnnGuiUukd1wEMPhfWLIKXrof2xfCF67MdkXPOZYUnjnQc/X1YUwb//iMU9YLDLs92RM45t9d54kiHBCN+C2sXw3M/grY94IBU+nt0zrmmI602Dgfk5oXLdLsPgSe+DmXeB5ZzrnnxxLE7ClrDBROgbVd49DxY9X62I3LOub3GE8fuatMFLnwSrArGnQwL/5XtiJxzbq/wxLEnOn8GLvl/0KItPPBlePV3fqmuc67J88Sxp7oOgFFTYOCZ8NIYeOw82Lgq21E551zGeOKoDy3awtn3wpd+B+9Pgbs+D4umZjsq55zLCE8c9UUK93Vc9gLk5MJ9J8N/7gi97DrnXBPiiaO+9TgEvvlP+OzJMPl/Qv9W3jmic64JyWjikHSypHmSFkjaoWNESftKeknS25KmSCqO5cdJmp4wbJZ0Rpx3v6QPEuYNyeQ+7JaWRXDew/DF38C7z8Pdx/gzPZxzTUbGEoekXOAOYAQwABgpaUCtarcAD5rZYGAMcCOAmb1iZkPMbAhwPLAReCFhuR9Vzzez6Znahz0iwZHfgUsnQVVFuOrqkznZjso55/ZYJo84hgELzOx9M9sKjAdOr1VnAPBSHH8lyXyAc4BJZrYxY5FmUq9hIXnkt4SHzoRPF2Y7Iuec2yOZTBw9gcTH5pXFskQzCE8aBDgTaCupU6065wOP1Sq7IZ7e+oOkFsk2LmmUpFJJpcuXL9+9PagvHfaFi/4KFZvhwTNg/bLsxuOcc3sgk4kj2WNma19idA1wrKS3gGOBj4GKmhVI3YGDgMkJy1xHeCrhYUBH4NpkGzezsWZWYmYlXbp02e2dqDddB4SnCa7/BB46yxvMnXONViYTRxnQK2G6GFicWMHMFpvZWWZ2CPCTWLYmocpXgKfMrDxhmSUWbAHuI5wSaxx6HRYazZe/A4+dD1sb59k351zzlsnEMRXoL6mvpALCKaeJiRUkdZZUHcN1wLha6xhJrdNU8SgESQLOAGZlIPbM+cwJcNZY+Oi/8JdLoLK8zkWcc64hyVjiMLMK4ErCaaa5wAQzmy1pjKTTYrXhwDxJ7wJdgRuql5fUh3DE8o9aq35E0kxgJtAZ+HWm9iFjBp0Fp/4e5k/2R9E65xodWTO4s7mkpMRKSxvgczP+eQu8/CsY9k0YcXO4hNc55xoISdPMrKR2uT8BMJs+/8PQIeJ/74BWnWB40nZ+55xrUDxxZJMEJ/0aNn0KU34DeS3gc1f7kYdzrkHzxJFtOTlw2m1QvhH+/gtYPg9O/QPkF2Y7MuecS8o7OWwIcvPgnPvg2NEw41G4/xRYuyTbUTnnXFKeOBqKnBw47jr4ykOw7B0YO9yf6eGca5A8cTQ0A06Dy18M7R33nwJvPZztiJxzbjueOBqirgPD42h7HwnPfAcmjYbKirqWcs65vcITR0PVqmPoGPGIb8Prd8LDZ/qzzJ1zDYInjoYsNw9OvhFO/7/QRcnY4bBsbrajcs41c544GoNDLgzP9Kjuln31orqXcc65DPHE0VgUl8BXn4byTfDIOeGmQeecywJPHI1J1wFw/sOw8j0YfxFUbMl2RM65ZsgTR2PT9xg440748F/w9Le8Z13n3F7nXY40RoPPhTWL4KXroX0xfGFMtiNyzjUjnjgaq6O/D2vK4N9/gva9YNg3sh2Rc66Z8MTRWEkw4rewdjFM+jG06wEHfCnbUTnnmgFv42jMcvPgnHuh+xB44jIoa4APq3LONTmeOBq7gtZwwQRo2xUe/Uq44so55zLIE0dT0KYLXPgkmIV7PNYvz3ZEzrkmLKOJQ9LJkuZJWiBpdJL5+0p6SdLbkqZIKo7lx0manjBslnRGnNdX0uuS5kt6XFJBJveh0ej8Gbjg8dDm8X9HhF51/VJd51wGZCxxSMoF7gBGAAOAkZIG1Kp2C/CgmQ0GxgA3ApjZK2Y2xMyGAMcDG4EX4jI3A38ws/7Ap8BlmdqHRqfXMLjsRejUL/SqO+4kWPxWtqNyzjUxmTziGAYsMLP3zWwrMB44vVadAcBLcfyVJPMBzgEmmdlGSSIkkifivAeAM+o98sas+2C49Hk44y749EMYexw8+33vWdc5V28ymTh6Aom98ZXFskQzgLPj+JlAW0mdatU5H3gsjncCVptZ9cMpkq0TAEmjJJVKKl2+vJmd88/JgSEj4apSOOJbMO0BuG0olI6DqspsR+eca+QymTiUpMxqTV8DHCvpLeBY4GOg5olFkroDBwGT01hnKDQba2YlZlbSpUuXdGNvGgrbh27Zr3gV9hkYjjz+fLxftuuc2yOZTBxlQK+E6WJgcWIFM1tsZmeZ2SHAT2LZmoQqXwGeMrPyOL0CKJJUfePiDut0SXQdCJc8C2ffC+s/gXtOgL9cCp/MznZkzrlGKJOJYyrQP14FVUA45TQxsYKkzpKqY7gOGFdrHSPZdpoKMzNCW8g5sehi4JkMxN70SHDQOXDlVPj8D2H+C3DnUTD+Qm9Ad86lJWOJI7ZDXEk4zTQXmGBmsyWNkXRarDYcmCfpXaArcEP18pL6EI5Y/lFr1dcCP5C0gNDmcW+m9qFJatEWTvg5fG8mHDsaFr4aniz4yLmw6I1sR+ecawQUfsQ3bSUlJVZa6uf1k9q8Bt74M/znDti0CvoeC8f+GPocne3InHNZJmmamZXULvc7x5u7wvZwzDXhCOSkX4dnmt//JRg3AuZN8psInXM78MThghZt4Kir4Htvw4j/hdUfwmPnh8t4/3snbF6b7Qidcw2EJw63vfyWcPgouHoGnDMO2uwDz4+G3w+ASdd6J4rOOW/jcCn4eBq8fjfM+itUVUD/k+CIK2C/48LVWs65JmlnbRyeOFzq1i0Nd5+XjoMNy6HLATBsFBx8fuje3TnXpHjjuNtzbbvBcf8D358NZ9wJuQXw/34QTmO98DNY/VG2I3TO7QV+xOF2nxl89B94/S6Y+7dQdsCpoX+s3kf6aSznGrmdHXH4M8fd7pNg36PCsHoRTP1z6FBx7kToNhgOvwIGnQ35hdmO1DlXj/xUlasfRb3gC2PgB3Pg1D9A5VZ45tvwh4Hw8g2hfcQ51yT4qSqXGWbw/pRwGuvdyZCTBwPPDFdj9Tw029E551Lgp6rc3iVBv+PCsPI9eGMsvPUIzJwAxcPg8G/CgNMhNz/bkTrn0uRHHG7v2bwWpj8Kb9wNq96Htj3gsMvg0Euhde3ndznnss3v4/DE0XBUVYVu3V+/M5zOyi2AHkOhuCQOh0G7nn5VlnNZ5onDE0fDtOwdeOuh0KX7khlQuSWUt+m2LZH0LIEeh4T+tJxze423cbiGaZ8D4IvxMSwVW+GTmVA2DcqmhuGdZ8M85ULfz8OBp8GBXw59aDnnssKPOFzDtmElfFwKH/4b5j4Lq94D4v0j1Umkfc9sR+lck+SnqjxxNH5msGwOzHkG5kyE5XNDec+ScIXWgV+Gjn2zG6NzTYgnDk8cTc+K+SGJzJ0Y2kcA2nYP94kUHxbaR3oc4h0wOrebPHF44mjaPl0I774Q2kU+Lg2X+wIoB/YZCMUxmfQ8FDp9xu8fcS4FWUkckk4G/gTkAveY2U215u8LjAO6AKuAi8ysLM7rDdwD9AIMOMXMFkq6HzgWWBNXc4mZTd9VHJ44mqENK8NzRKoTycfTwvPVIdzF3rEfdNk/DgdA589C5/7hQVbOOSALV1VJygXuAL4AlAFTJU00szkJ1W4BHjSzByQdD9wIfDXOexC4wcxelNQGSHz49Y/M7IlMxe6agNad4LMnhQHCvSMrF8Dit2D5O7Di3dBe8s7/A6uMCwk67Av7DIj3lRwajlAK22dtN5xriDJ5Oe4wYIGZvQ8gaTxwOpCYOAYA34/jrwBPx7oDgDwzexHAzNZnME7XHOTkQJfPhiFRxZbQJcqKebA8Dp/MgnnPxQoKRyOJ95TsMwBy/Up213xl8tPfE1iUMF0GHF6rzgzgbMLprDOBtpI6AZ8FVkv6K9AX+Dsw2qzmp+ENkn4OvBTLt9TeuKRRwCiA3r1719tOuSYmrwV0HRCGRJtWw+I3wz0lH5fCu8/D9EfCvPxW4RRXTh3tJLkF0K47tOsR7oRv2z28tusR7kPJyc3MPjmXYZlMHMn6i6jdoHINcLukS4B/Ah8DFTGuzwOHAB8BjwOXAPcC1wFLgQJgLHAtMGaHDZmNjfMpKSlp+lcAuPrVsgj6HR8GCJcCf7oQykpDIlnxbijblYrNoY1l7ZJtd8RXU254omKrjqEBf1fyChOSTq1E1LY75BXs9m46tzsymTjKCA3b1YqBxYkVzGwxcBZAbMc428zWSCoD3ko4zfU0cARwr5ktiYtvkXQfIfk4l1lSuEekY18YfG56y5rBxlWw9mNYuxjWLQ6vaxfDxpV1L1++ET6ZHfr3Kt+44/zW+0DLDt63l0tu5Ph6v78pk4ljKtBfUl/CkcT5wAWJFSR1BlaZWRXhSGJcwrIdJHUxs+XA8UBpXKa7mS2RJOAMYFYG98G5PSeFxvrWnaD74N1fj1m4MmzdkpiElsQE9DFsXl1/8bqmJa9F/a+y3tcYmVmFpCuByYTLcceZ2WxJY4BSM5sIDAdulGSEU1XfictWSroGeCkmiGnAn+OqH5HUhXAqbDpwRab2wbkGRQqn0FoWwT4HZjsa14z5DYDOOeeS2tl9HP7Mceecc2nxxOGccy4tnjicc86lxROHc865tHjicM45lxZPHM4559LiicM551xamsV9HJKWAx+mWL0zsCKD4dS3xhYveMx7S2OLubHFC00/5n3NrEvtwmaRONIhqTTZDS8NVWOLFzzmvaWxxdzY4oXmG7OfqnLOOZcWTxzOOefS4oljR2OzHUCaGlu84DHvLY0t5sYWLzTTmL2NwznnXFr8iMM551xaPHE455xLiyeOSNLJkuZJWiBpdLbjqSZpnKRlkmYllHWU9KKk+fG1QyyXpFvjPrwtaWgW4u0l6RVJcyXNlnR1I4i5UNIbkmbEmK+P5X0lvR5jflxSQSxvEacXxPl99nbMCbHnSnpL0rONIWZJCyXNlDRdUvVTPRvyZ6NI0hOS3omf6SMbeLz7x/e2elgr6Xv1HrOZNfuB8ITC94D9gAJgBjAg23HF2I4BhgKzEsp+C4yO46OBm+P4KcAkwtMRjwBez0K83YGhcbwt8C4woIHHLKBNHM8HXo+xTADOj+V3Ad+K498G7orj5wOPZ/Hz8QPgUeDZON2gYwYWAp1rlTXkz8YDwOVxvAAoasjx1oo9F1gK7FvfMWdtpxrSABwJTE6Yvg64LttxJcTTp1bimAd0j+PdgXlx/G5gZLJ6WYz9GeALjSVmoBXwJnA44e7avNqfEcLjkI+M43mxnrIQazHwEnA88Gz852/oMSdLHA3yswG0Az6o/T411HiTxH8S8O9MxOynqoKewKKE6bJY1lB1NbMlAPF1n1jeoPYjng45hPALvkHHHE/5TAeWAS8SjkBXm1lFkrhqYo7z1wCd9m7EAPwR+DFQFac70fBjNuAFSdMkjYplDfWzsR+wHLgvng68R1LrBhxvbecDj8Xxeo3ZE0egJGWN8TrlBrMfktoATwLfM7O1u6qapGyvx2xmlWY2hPArfhhwYLJq8TXrMUs6FVhmZtMSi5NUbTAxR58zs6HACOA7ko7ZRd1sx5xHOE18p5kdAmwgnObZmWzHWyO2bZ0G/KWuqknK6ozZE0dQBvRKmC4GFmcpllR8Iqk7QHxdFssbxH5IyickjUfM7K+xuEHHXM3MVgNTCOd7iyTlJYmrJuY4vz2wau9GyueA0yQtBMYTTlf9kYYdM2a2OL4uA54iJOmG+tkoA8rM7PU4/QQhkTTUeBONAN40s0/idL3G7IkjmAr0j1ekFBAO8SZmOaZdmQhcHMcvJrQjVJd/LV4pcQSwpvrwdG+RJOBeYK6Z/T5hVkOOuYukojjeEjgRmAu8Apyzk5ir9+Uc4GWLJ4j3FjO7zsyKzawP4fP6spldSAOOWVJrSW2rxwnn4GfRQD8bZrYUWCRp/1h0AjCnocZby0i2naaC+o45Ww03DW0gXF3wLuHc9k+yHU9CXI8BS4Bywq+Dywjnpl8C5sfXjrGugDviPswESrIQ79GEQ923gelxOKWBxzwYeCvGPAv4eSzfD3gDWEA45G8Rywvj9II4f78sf0aGs+2qqgYbc4xtRhxmV/+fNfDPxhCgNH42ngY6NOR4YxytgJVA+4Syeo3ZuxxxzjmXFj9V5ZxzLi2eOJxzzqXFE4dzzrm0eOJwzjmXFk8czjnn0uKJw2WFJJP0u4TpayT9sp7Wfb+kc+quucfbOTf2mPpKrfI+SujNOIX1nCFpwB7E0UfSBbuYt6lWj6kF9bkN1/x44nDZsgU4S1LnbAeSSFJuGtUvA75tZsft4WbPIPQgvLv6ALv6Un/PzIYkDFszsI2k0nw/XSPhicNlSwXh2cffrz2j9hGDpPXxdbikf0iaIOldSTdJulDhWRozJfVLWM2Jkl6N9U6Ny+dK+l9JU+OzB76ZsN5XJD1KuAmqdjwj4/pnSbo5lv2ccLPjXZL+N5UdlvSNuO0Zkp6U1ErSUYQ+hf43Hg30i8PzsSPAVyUdkPC+3CrpNUnvJ7xHNwGfj8vv8H7uJJbWCs96marQgd/psbxP3OabcTgq2TYkXSLp9oT1PStpeBxfL2mMpNeBIyUdGv9u0yRN1rauL74raU78W4xPJW7XQGTjzkYffADWE7qtXkjoN+ka4Jdx3v3AOYl14+twYDWhW+gWwMfA9XHe1cAfE5Z/nvDDqD/hjvtCYBTw01inBeGO4L5xvRuAvkni7AF8BHQhdHr3MnBGnDeFJHfaUqsb/ITyTgnjvwau2sn+vgT0j+OHE7oHqa73l7hfA4AFCe/Lszt5n/sAm9h2F/8dsfw3wEVxvIjQa0Jrwl3HhbG8P1CabBvAJcDtCdPPAsPjuAFfieP5wGtAlzh9HjAuji9m253tRdn+TPqQ+lDdGZpze52ZrZX0IPBdwpdbKqZa7EtH0nvAC7F8JpB4ymiCmVUB8yW9DxxA6BtpcMIv9faEL8etwBtm9kGS7R0GTDGz5XGbjxAervV0ivEmGiTp14Qv6jaEZ2RsR6FX4aOAv0g1HZe2SKjydNyvOZK6prjd9yz0/JvoJEInidfE6UKgN+HL/HZJQ4BK4LMpbiNRJaGTS4D9gUHAi3F/cgld6EDoxuMRSU+ze++nyxJPHC7b/kh4cNJ9CWUVxNOoCt82iY25WxLGqxKmq9j+81y7Lx0j9MtzlZlt94UdT7Fs2El8ybqd3l33E45WZki6hPArvrYcwjM1an/RV0vc/z2JTcDZZjZvu8JwgcInwMExls07Wb7mbxQVJoxvNrPKhO3MNrMjk6zjS4QkfBrwM0kDbduzRFwD5m0cLqvMbBXhcaeXJRQvBA6N46cTTnek61xJObHdYz/Ck80mA99S6PYdSZ9V6KV1V14HjpXUOTb0jgT+sRvxQHiU7pK4/QsTytfFeVh4dskHks6NMUrSwXWst2b5NEwGroqJGUmHxPL2wJJ4VPNVwhFCsm0sBIbE97gXoXv0ZOYBXSQdGbeTL2mgpBygl5m9QngYVfVRmGsEPHG4huB3QOLVVX8mfFm/QTjHv7OjgV2ZR/iCnwRcYWabgXsI3WK/qXC57N3UcdQdT4tdR+iufAbhGQfP7GqZaH9JZQnDucDPCInoReCdhLrjgR/FRup+hKRymaTqXmRPr2NbbwMVsdE9pcZx4FeEhPx2fC9+Fcv/D7hY0n8Jp6mq3/va2/g34bGqM4FbCEeNO7BwBdc5wM1xf6YTTsXlAg9LmknomfgPFp6F4hoB7x3XOedcWvyIwznnXFo8cTjnnEuLJw7nnHNp8cThnHMuLZ44nHPOpcUTh3POubR44nDOOZeW/w9KQdF2nDCddwAAAABJRU5ErkJggg==
-"
->
-</div>
-
-</div>
-
 </div>
 </div>
 
